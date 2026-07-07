@@ -301,13 +301,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 520px;
+      min-height: 580px;
     }
 
     .phone-stack {
       position: relative;
-      width: 300px;
-      height: 540px;
+      width: 360px;
+      height: 560px;
     }
 
     .drag-hint {
@@ -375,18 +375,23 @@
     }
 
     .phone:nth-child(1) {
-      transform: rotate(-6deg) scale(0.95);
-      z-index: 1;
+      transform: rotate(9deg) scale(1);
+      z-index: 4;
     }
 
     .phone:nth-child(2) {
-      transform: rotate(0deg) scale(1);
-      z-index: 3;
+      transform: rotate(-9deg) scale(0.95);
+      z-index: 1;
     }
 
     .phone:nth-child(3) {
-      transform: rotate(6deg) scale(0.95);
+      transform: rotate(-3deg) scale(0.95);
       z-index: 2;
+    }
+
+    .phone:nth-child(4) {
+      transform: rotate(3deg) scale(0.95);
+      z-index: 3;
     }
 
     .phone-screen {
@@ -552,8 +557,9 @@
       overflow: hidden;
       border: 1px solid var(--border);
       transition: transform 0.25s, box-shadow 0.25s;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 240px;
     }
 
     .case-card:hover {
@@ -568,13 +574,12 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
-      padding: var(--space-md);
+      padding: var(--space-sm);
     }
 
     .case-card-media img {
-      max-height: 420px;
-      width: auto;
-      max-width: 100%;
+      width: 100%;
+      height: auto;
       object-fit: contain;
       display: block;
       border-radius: var(--radius-sm);
@@ -590,9 +595,8 @@
     .case-card-media.no-image .phone-placeholder {
       position: relative;
       z-index: 1;
-      width: auto;
-      height: 100%;
-      max-height: 420px;
+      width: 90%;
+      height: auto;
       aspect-ratio: 780 / 1274;
       border-radius: 24px;
       background: var(--surface);
@@ -895,7 +899,7 @@
       }
 
       .hero-visual {
-        min-height: 380px;
+        min-height: 500px;
         order: -1;
       }
 
@@ -922,12 +926,24 @@
         grid-template-columns: 1fr;
       }
 
-      .case-card-media {
-        padding: var(--space-sm);
+      .case-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
       }
 
-      .case-card-media img,
+      .case-card-media {
+        padding: var(--space-md);
+      }
+
+      .case-card-media img {
+        max-height: 320px;
+        width: auto;
+        max-width: 100%;
+      }
+
       .case-card-media.no-image .phone-placeholder {
+        width: auto;
+        height: 100%;
         max-height: 320px;
       }
 
@@ -944,6 +960,7 @@
 
     @media (max-width: 480px) {
       .phone-stack { transform: scale(0.7); }
+      .hero-visual { min-height: 430px; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
     }
@@ -1043,13 +1060,16 @@
       <div class="hero-visual">
         <div class="phone-stack" id="phoneStack">
           <div class="phone" data-index="0">
-            <img src="assets/vowvista.png" alt="VowVista wedding gallery app" class="phone-screen" draggable="false">
+            <img src="assets/browbook.png" alt="BrowBook brow and lash studio app" class="phone-screen" draggable="false">
           </div>
           <div class="phone" data-index="1">
             <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app" class="phone-screen" draggable="false">
           </div>
           <div class="phone" data-index="2">
-            <img src="assets/snipqueue.png" alt="SnipQueue barbershop queue app" class="phone-screen" draggable="false">
+            <img src="assets/handyflow.png" alt="HandyFlow handyman job app" class="phone-screen" draggable="false">
+          </div>
+          <div class="phone" data-index="3">
+            <img src="assets/handmadecandlestorefront.png" alt="Little Shop handmade candle storefront app" class="phone-screen" draggable="false">
           </div>
         </div>
         <div class="phone-controls">
@@ -1649,15 +1669,16 @@
       if (!stack) return;
 
       const phones = Array.from(stack.querySelectorAll('.phone'));
-      // Bottom-to-top visual order: Coffee (0), Barber (2), BrewQueue (1) on top
-      let order = [0, 2, 1];
+      // Bottom-to-top visual order: BrewQueue (1), HandyFlow (2), Handmade Candle (3), BrowBook (0) on top
+      let order = [1, 2, 3, 0];
       const threshold = 100;
       let isAnimating = false;
       let dragState = null;
 
       function layout(visualIndex) {
         const isTop = visualIndex === phones.length - 1;
-        const rotation = visualIndex === 0 ? -6 : visualIndex === phones.length - 1 ? 6 : 0;
+        const middle = (phones.length - 1) / 2;
+        const rotation = (visualIndex - middle) * 6;
         const scale = isTop ? 1 : 0.95;
         return { rotation, scale };
       }
