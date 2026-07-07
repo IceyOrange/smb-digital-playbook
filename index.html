@@ -350,12 +350,12 @@
 
     .phone {
       position: absolute;
-      width: 260px;
-      height: 520px;
-      border-radius: 36px;
-      background: var(--surface);
+      width: 280px;
+      height: 458px;
+      border-radius: 28px;
+      background: transparent;
       box-shadow: var(--shadow-hover);
-      border: 8px solid var(--text);
+      border: none;
       overflow: hidden;
       transition: transform 0.4s ease-out;
     }
@@ -363,8 +363,8 @@
     .phone {
       left: 50%;
       top: 50%;
-      margin-left: -130px;
-      margin-top: -260px;
+      margin-left: -140px;
+      margin-top: -229px;
       cursor: grab;
       touch-action: none;
       user-select: none;
@@ -392,7 +392,7 @@
     .phone-screen {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       -webkit-user-drag: none;
       user-select: none;
       pointer-events: none;
@@ -552,9 +552,8 @@
       overflow: hidden;
       border: 1px solid var(--border);
       transition: transform 0.25s, box-shadow 0.25s;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      min-height: 240px;
+      display: flex;
+      flex-direction: column;
     }
 
     .case-card:hover {
@@ -563,36 +562,37 @@
     }
 
     .case-card-media {
-      background: linear-gradient(135deg, var(--accent-light) 0%, #fff 100%);
+      background: var(--bg);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      padding: 10px;
+      padding: var(--space-md);
     }
 
     .case-card-media img {
-      width: 100%;
-      height: auto;
+      max-height: 420px;
+      width: auto;
+      max-width: 100%;
       object-fit: contain;
       display: block;
       border-radius: var(--radius-sm);
-      filter: drop-shadow(0 8px 20px rgba(42, 33, 24, 0.12));
     }
 
     .case-card-media.no-image::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(196, 93, 43, 0.08), transparent 60%);
+      background: radial-gradient(circle at 30% 30%, rgba(196, 93, 43, 0.06), transparent 60%);
     }
 
     .case-card-media.no-image .phone-placeholder {
       position: relative;
       z-index: 1;
-      width: 90%;
-      height: auto;
+      width: auto;
+      height: 100%;
+      max-height: 420px;
       aspect-ratio: 780 / 1274;
       border-radius: 24px;
       background: var(--surface);
@@ -602,7 +602,6 @@
       align-items: center;
       justify-content: center;
       gap: var(--space-sm);
-      box-shadow: 0 12px 32px rgba(42, 33, 24, 0.12);
     }
 
     .phone-placeholder-icon {
@@ -905,14 +904,13 @@
         grid-template-columns: 1fr;
       }
 
-      .case-card {
-        grid-template-columns: 1fr;
-        min-height: auto;
+      .case-card-media {
+        padding: var(--space-sm);
       }
 
-      .case-card-media {
-        height: 280px;
-        aspect-ratio: auto;
+      .case-card-media img,
+      .case-card-media.no-image .phone-placeholder {
+        max-height: 320px;
       }
 
       .filters {
@@ -1027,19 +1025,13 @@
       <div class="hero-visual">
         <div class="phone-stack" id="phoneStack">
           <div class="phone" data-index="0">
-            <div class="phone-placeholder" style="width:100%; height:100%; border:none; box-shadow:none; border-radius:28px;">
-              <div class="phone-placeholder-icon">☕</div>
-              <div class="phone-placeholder-name">Coffee pickup</div>
-            </div>
+            <img src="assets/vowvista.png" alt="VowVista wedding gallery app" class="phone-screen" draggable="false">
           </div>
           <div class="phone" data-index="1">
-            <img src="assets/brewqueue.png" alt="BrewQueue App" class="phone-screen" draggable="false">
+            <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app" class="phone-screen" draggable="false">
           </div>
           <div class="phone" data-index="2">
-            <div class="phone-placeholder" style="width:100%; height:100%; border:none; box-shadow:none; border-radius:28px;">
-              <div class="phone-placeholder-icon">💇</div>
-              <div class="phone-placeholder-name">Barber queue</div>
-            </div>
+            <img src="assets/snipqueue.png" alt="SnipQueue barbershop queue app" class="phone-screen" draggable="false">
           </div>
         </div>
         <div class="phone-controls">
@@ -1164,7 +1156,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/cardsnap.png",
-        prompt: "",
+        prompt: "Build a 'CardSnap' mobile catalog app for small retailers. Shopper side: browse products by category, view photos, descriptions, prices, and availability, and save favorites. Seller side: add and edit products, update stock, and manage the catalog. Use clean product cards, a simple bottom navigation, and warm retail tones. Designed for Instagram sellers and small shops.",
         url: "https://cardsnap-rnai.whacka.app"
       },
       {
@@ -1177,7 +1169,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/vowvista.png",
-        prompt: "",
+        prompt: "Build a 'VowVista' wedding photography portfolio app. Couple side: browse full-screen photo galleries, check photographer availability, and submit a booking inquiry. Photographer side: upload albums, set available dates, and manage inquiries. Use elegant typography, a dark immersive gallery layout, and soft accent colors. Designed for wedding photographers.",
         url: "https://vowvista.whacka.app"
       },
       {
@@ -1190,7 +1182,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/fitslot.png",
-        prompt: "",
+        prompt: "Build a 'FitSlot' gym workout scheduling app. Member side: book workout appointments, view a weekly schedule, and log progress. Trainer side: manage class calendar, view member attendance, and track workout history. Use bold energetic colors and a weekly calendar view. Designed for gyms and personal training studios.",
         url: "https://fitslot-koze.whacka.app"
       },
       {
@@ -1203,7 +1195,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/booksy.png",
-        prompt: "",
+        prompt: "Build a 'Booksy' small service booking app. Customer side: view services, pick a time slot, and receive instant booking confirmation. Owner side: manage appointments, update availability, and view a booking dashboard. Use friendly rounded cards, a simple time-slot picker, and trustworthy blue tones. Designed for local service businesses.",
         url: "https://booksy-ligv.whacka.app"
       },
       {
@@ -1216,7 +1208,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/qrmenukitchenorders.png",
-        prompt: "",
+        prompt: "Build a 'QR Menu' cafe ordering app. Customer side: scan a QR code at the table, browse the digital menu, add items to cart, and place an order without logging in. Kitchen side: see incoming orders in real-time with table numbers and item details. Use warm cafe colors, large menu cards, and clear category tabs. Designed for cafes and casual restaurants.",
         url: "https://tr-qrmenu-6b2ee1.whacka.app"
       },
       {
@@ -1229,7 +1221,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/thluxe.png",
-        prompt: "",
+        prompt: "Build a 'ThéLuxe' restaurant table ordering app. Waiter side: take orders at the table, send them to the cashier and kitchen instantly. Cashier side: view bills, process payments, and print receipts. Manager side: see sales ranking and server performance. Use professional restaurant tones, clear order cards, and a split-role navigation. Designed for full-service restaurants.",
         url: "https://theluxe.whacka.app"
       },
       {
@@ -1242,7 +1234,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/handmadecandlestorefront.png",
-        prompt: "",
+        prompt: "Build a 'Little Shop' handmade candle storefront app. Shopper side: browse product photos and prices, add to cart, and check out. Owner side: manage products, view orders, and mark shipments. Use cozy warm tones, simple product grids, and soft card shadows. Designed for handmade goods sellers and small boutiques.",
         url: "https://tr-shop-17c937.whacka.app"
       },
       {
@@ -1255,7 +1247,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/quotewave.png",
-        prompt: "",
+        prompt: "Build a 'QuoteWave' instant quote app for home service businesses. Customer side: select service type, choose job size and add-ons, and see a live estimate. Business side: customize pricing rules and view quote requests. Use practical colors, a clean step-by-step form, and clear price breakdown cards. Designed for handymen, cleaners, and home service providers.",
         url: "https://quotewave-0ckt.whacka.app"
       },
       {
@@ -1268,7 +1260,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/clinicbookingwapproval.png",
-        prompt: "",
+        prompt: "Build a 'Clinic Booking' appointment app for small clinics. Patient side: view available slots, book a cleaning or checkup, and receive confirmation. Front desk side: review pending appointments, approve or reschedule, and manage the calendar. Use calm medical tones, a clear time-slot grid, and appointment status badges. Designed for dental and small medical clinics.",
         url: "https://tr-clinic-07fc7b.whacka.app"
       },
       {
@@ -1281,7 +1273,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/calmara.png",
-        prompt: "",
+        prompt: "Build a 'Calmara' yoga studio app. Student side: explore the weekly schedule, book classes, and add personal notes. Studio side: manage class schedule, view attendance, and update class details. Use calm minimal tones, soft typography, and a clean weekly calendar. Designed for yoga studios and wellness centers.",
         url: "https://calmara.whacka.app"
       },
       {
@@ -1552,8 +1544,9 @@
 
         const mediaClass = c.hasImage ? 'case-card-media' : 'case-card-media no-image';
         const imageSrc = c.imageUrl || 'assets/brewqueue.png';
+        const loadingAttr = i < 2 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" decoding="async"';
         const mediaContent = c.hasImage
-          ? `<img src="${imageSrc}" alt="${c.name} app screenshot">`
+          ? `<img src="${imageSrc}" alt="${c.name} — ${c.industry} app screenshot" ${loadingAttr}>`
           : `<div class="phone-placeholder"><div class="phone-placeholder-icon">${c.icon}</div><div class="phone-placeholder-name">${c.name}</div></div>`;
         const metricHtml = c.metric ? `<div class="case-metric">↗ ${c.metric}</div>` : '';
         const openUrl = appendUtmParams(c.url || 'https://whacka.app/dashboard', c.name);
@@ -1569,7 +1562,7 @@
           </div>
           <div class="case-card-body">
             <span class="case-tag">${c.industry}</span>
-            <h3 class="serif">${c.name} · ${c.title}</h3>
+            <h3 class="serif">${c.name}${c.title ? ` · ${c.title}` : ''}</h3>
             <p class="case-problem">${c.solution} ${c.problem}</p>
             ${metricHtml}
             <div class="case-card-actions">
