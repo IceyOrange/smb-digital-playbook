@@ -2,7 +2,7 @@
 
 > 25 real-world digital setups for small businesses — each with a copy-ready Prompt for [whacka](https://whacka.app) and a live app example.
 
-**Live preview**: https://smb-digital-playbook.vercel.app (replace with your custom domain once connected)
+**Live preview**: https://smb-playbook.lovegood.cool (replace with your custom domain once connected)
 
 ---
 
