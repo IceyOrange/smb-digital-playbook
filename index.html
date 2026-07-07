@@ -3,11 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Small Business Playbook — 40 Real Shop Digital Setups</title>
-  <meta name="description" content="From coffee shops to gyms, 40 real small business scenarios with copy-ready digital setups. No code needed.">
+  <title>Small Business Playbook — 25 Real Shop Digital Setups</title>
+  <meta name="description" content="Browse 25 real small business digital setups: coffee shops, retail boutiques, gyms, salons, clinics, and more. Each case includes a copy-ready prompt and a live app example. No code needed.">
+  <meta name="keywords" content="small business digital setup, no-code app, SMB automation, coffee shop app, retail app, fitness booking app, salon booking app, clinic booking app, whacka prompt, digital playbook">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://smb-digital-playbook.vercel.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smb-digital-playbook.vercel.app/">
+  <meta property="og:title" content="Small Business Playbook — 25 Real Shop Digital Setups">
+  <meta property="og:description" content="Browse 25 real small business digital setups with copy-ready prompts and live apps. No code needed.">
+  <meta property="og:image" content="https://smb-digital-playbook.vercel.app/assets/brewqueue.png">
+  <meta property="og:site_name" content="Small Business Playbook">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://smb-digital-playbook.vercel.app/">
+  <meta name="twitter:title" content="Small Business Playbook — 25 Real Shop Digital Setups">
+  <meta name="twitter:description" content="Browse 25 real small business digital setups with copy-ready prompts and live apps. No code needed.">
+  <meta name="twitter:image" content="https://smb-digital-playbook.vercel.app/assets/brewqueue.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Schema.org: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Small Business Playbook",
+    "url": "https://smb-digital-playbook.vercel.app/",
+    "description": "A curated collection of real small business digital setups with copy-ready prompts and live app examples.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Small Business Playbook"
+    }
+  }
+  </script>
+
+  <!-- Schema.org: FAQPage (GEO-friendly) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Small Business Playbook?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Small Business Playbook is a showcase of real-world digital setups for small businesses. Each case includes the original problem, a copy-ready prompt, and a live app example built with whacka."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to code to use these setups?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No coding is required. You can copy the English prompt from any case, paste it into whacka.app, and get a working mini-app tailored to your shop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which industries are covered?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The playbook covers Food & Beverage, Retail, Fitness, Beauty, Education, Healthcare, Services, Pet Care, Home Services, and Creative businesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize the app for my own business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Each setup is a starting point. After generating the app on whacka, you can change the name, colors, items, and workflow to match your exact business needs."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #fcf9f3;
@@ -81,12 +158,17 @@
     .logo-mark {
       width: 36px;
       height: 36px;
-      background: var(--accent);
       border-radius: 10px;
       display: grid;
       place-items: center;
-      color: white;
-      font-size: 1.1rem;
+      overflow: hidden;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .nav-links {
@@ -191,6 +273,26 @@
     .btn-secondary:hover {
       border-color: var(--accent);
       color: var(--accent);
+    }
+
+    @keyframes buildNowIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .btn-primary.build-now {
+      animation: buildNowIn 0.25s ease;
+    }
+
+    .btn-primary.build-now::after {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-top: 2.5px solid currentColor;
+      border-right: 2.5px solid currentColor;
+      transform: rotate(45deg) translateY(0.5px);
+      margin-left: 5px;
     }
 
     .hero-visual {
@@ -440,7 +542,7 @@
     /* Case Grid */
     .case-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--space-md);
     }
 
@@ -450,8 +552,9 @@
       overflow: hidden;
       border: 1px solid var(--border);
       transition: transform 0.25s, box-shadow 0.25s;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: 240px;
     }
 
     .case-card:hover {
@@ -460,21 +563,22 @@
     }
 
     .case-card-media {
-      height: 240px;
       background: linear-gradient(135deg, var(--accent-light) 0%, #fff 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
+      padding: 10px;
     }
 
     .case-card-media img {
-      height: 90%;
-      width: auto;
-      border-radius: 24px;
-      box-shadow: 0 12px 32px rgba(42, 33, 24, 0.12);
-      object-fit: cover;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: var(--radius-sm);
+      filter: drop-shadow(0 8px 20px rgba(42, 33, 24, 0.12));
     }
 
     .case-card-media.no-image::before {
@@ -487,11 +591,12 @@
     .case-card-media.no-image .phone-placeholder {
       position: relative;
       z-index: 1;
-      width: 160px;
-      height: 300px;
-      border-radius: 28px;
+      width: 90%;
+      height: auto;
+      aspect-ratio: 780 / 1274;
+      border-radius: 24px;
       background: var(--surface);
-      border: 6px solid var(--text);
+      border: 5px solid var(--text);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -514,16 +619,16 @@
     }
 
     .case-tag {
-      position: absolute;
-      top: var(--space-sm);
-      left: var(--space-sm);
-      background: var(--surface);
-      color: var(--text);
-      padding: 6px 12px;
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg);
+      color: var(--text-secondary);
+      padding: 4px 10px;
       border-radius: 100px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      box-shadow: var(--shadow);
+      margin-bottom: var(--space-xs);
+      width: fit-content;
     }
 
     .case-card-body {
@@ -800,6 +905,16 @@
         grid-template-columns: 1fr;
       }
 
+      .case-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .case-card-media {
+        height: 280px;
+        aspect-ratio: auto;
+      }
+
       .filters {
         top: 60px;
         border-radius: var(--radius-sm);
@@ -817,12 +932,70 @@
       .hero-actions .btn { width: 100%; justify-content: center; }
     }
   </style>
+
+  <!-- PostHog Analytics -->
+  <script>
+    !(function (t, e) {
+      var o, n, p, r;
+      e.__SV ||
+        ((window.posthog = e),
+        (e._i = []),
+        (e.init = function (i, s, a) {
+          function g(t, e) {
+            var o = e.split(".");
+            (2 == o.length && ((t = t[o[0]]), (e = o[1])),
+              (t[e] = function () {
+                t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+              }));
+          }
+          (((p = t.createElement("script")).type = "text/javascript"),
+            (p.crossOrigin = "anonymous"),
+            (p.async = !0),
+            (p.src =
+              s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js"),
+            (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r));
+          var u = e;
+          for (
+            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+              u.people = u.people || [],
+              u.toString = function (t) {
+                var e = "posthog";
+                return ("posthog" !== a && (e += "." + a), t || (e += " (stub)"), e);
+              },
+              u.people.toString = function () {
+                return u.toString(1) + ".people (stub)";
+              },
+              o =
+                "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(
+                  " ",
+                ),
+              n = 0;
+            n < o.length;
+            n++
+          )
+            g(u, o[n]);
+          e._i.push([i, s, a]);
+        }),
+        (e.__SV = 1));
+    })(document, window.posthog || []);
+    posthog.init("phc_xAND72ZnnCrFZ49ZEiYJwZ2q5XUAK48FULbiLSzb837b", {
+      api_host: "https://us.i.posthog.com",
+      defaults: "2026-05-30",
+      person_profiles: "identified_only",
+      capture_pageview: true,
+      capture_pageleave: true,
+      session_recording: {
+        maskAllInputs: false,
+        maskTextSelector: ""
+      }
+    });
+  </script>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a href="#" class="logo" data-track="nav_click" data-track-destination="home">
-        <span class="logo-mark">S</span>
+        <span class="logo-mark"><img src="assets/smb.svg" alt=""></span>
         <span>Small Business Playbook</span>
       </a>
       <nav>
@@ -840,13 +1013,13 @@
       <div class="hero-content">
         <div class="hero-badge">📍 Real shops · Real scenarios · Copy-ready</div>
         <h1 class="serif">The Small Business<br><em>Digital Playbook</em></h1>
-        <p class="hero-sub">No code. No buzzwords. Just 40 battle-tested digital setups pulled from real shop floors.</p>
+        <p class="hero-sub">No code. No buzzwords. Just 25 battle-tested digital setups pulled from real shop floors.</p>
         <div class="hero-actions">
           <a href="#cases" class="btn btn-primary" data-track="cta_click" data-track-action="hero_primary" data-track-destination="cases">See how others did it →</a>
           <a href="#how" class="btn btn-secondary" data-track="cta_click" data-track-action="hero_secondary" data-track-destination="how_it_works">How does this work?</a>
         </div>
         <div class="hero-stats">
-          <div class="stat-pill"><strong>40</strong> micro-setups</div>
+          <div class="stat-pill"><strong>25</strong> micro-setups</div>
           <div class="stat-pill"><strong>10</strong> industries</div>
           <div class="stat-pill"><strong>0</strong> lines of code</div>
         </div>
@@ -900,8 +1073,11 @@
 
   <section class="cases-section" id="cases">
     <div class="section-header">
-      <h2 class="serif">40 Real Shop Makeovers</h2>
+      <h2 class="serif">25 Real Shop Makeovers</h2>
       <p>Pick your industry. Find a case that looks like yours. Copy the setup.</p>
+    </div>
+    <div class="section-notice" style="text-align:center; margin-bottom: var(--space-lg); color: var(--text-secondary); font-size: 1rem;">
+      Continuously updated · 25 real apps live, more small-business setups coming soon
     </div>
 
     <div class="filters">
@@ -938,7 +1114,7 @@
           </div>
         </div>
         <div class="case-metric" style="margin-bottom: var(--space-md);">✓ Wait time down 60%</div>
-        <a href="https://sipslot-f1k4.whacka.app/" target="_blank" class="btn btn-primary" data-track="cta_try_it" data-track-prompt-id="BrewQueue" data-track-category="Food & Beverage">Open the app →</a>
+        <a href="https://sipslot-f1k4.whacka.app/?utm_source=smb_digital_playbook&utm_medium=referral&utm_campaign=smb_cases&utm_content=BrewQueue" target="_blank" class="btn btn-primary" data-track="cta_try_it" data-track-prompt-id="BrewQueue" data-track-category="Food & Beverage">Open the app →</a>
       </div>
       <div class="featured-visual">
         <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app">
@@ -978,6 +1154,136 @@
 
   <script>
     const cases = [
+      {
+        name: "CardSnap",
+        title: "",
+        industry: "Retail",
+        icon: "🛍️",
+        problem: "",
+        solution: "Browse a clean, mobile-friendly catalog displaying products by category with photos, descriptions, prices, and availability. Useful for WhatsApp/Instagram sellers and small shops.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/cardsnap.png",
+        prompt: "",
+        url: "https://cardsnap-rnai.whacka.app"
+      },
+      {
+        name: "VowVista",
+        title: "",
+        industry: "Creative",
+        icon: "🎨",
+        problem: "",
+        solution: "Showcase elegant wedding photos in a full-screen gallery, let couples check date availability, and book their special day through a smooth inquiry form.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/vowvista.png",
+        prompt: "",
+        url: "https://vowvista.whacka.app"
+      },
+      {
+        name: "FitSlot",
+        title: "",
+        industry: "Fitness",
+        icon: "💪",
+        problem: "",
+        solution: "Organize gym workouts by scheduling appointments and tracking progress in one simple interface.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/fitslot.png",
+        prompt: "",
+        url: "https://fitslot-koze.whacka.app"
+      },
+      {
+        name: "Booksy",
+        title: "",
+        industry: "Services",
+        icon: "🔧",
+        problem: "",
+        solution: "Enables customers to book small service appointments via a simple form and receive instant confirmation. Owners manage and update bookings through a private dashboard.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/booksy.png",
+        prompt: "",
+        url: "https://booksy-ligv.whacka.app"
+      },
+      {
+        name: "QR Menu + Kitchen Orders",
+        title: "",
+        industry: "Food & Beverage",
+        icon: "☕",
+        problem: "",
+        solution: "A digital menu for a café. Customers scan a QR code at their table, browse the menu, and place an order without logging in. The kitchen sees new orders immediately.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/qrmenukitchenorders.png",
+        prompt: "",
+        url: "https://tr-qrmenu-6b2ee1.whacka.app"
+      },
+      {
+        name: "ThéLuxe",
+        title: "",
+        industry: "Food & Beverage",
+        icon: "☕",
+        problem: "",
+        solution: "Manage table orders in real-time with seamless waiter input and instant cashier updates. Track sales, rank servers, and print receipts.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/thluxe.png",
+        prompt: "",
+        url: "https://theluxe.whacka.app"
+      },
+      {
+        name: "Handmade Candle Storefront",
+        title: "Little Shop",
+        industry: "Retail",
+        icon: "🛍️",
+        problem: "",
+        solution: "A little shop app for handmade candles: people browse photos and prices, add to cart, and pay. The owner sees orders in a dashboard.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/handmadecandlestorefront.png",
+        prompt: "",
+        url: "https://tr-shop-17c937.whacka.app"
+      },
+      {
+        name: "QuoteWave",
+        title: "",
+        industry: "Home Services",
+        icon: "🏠",
+        problem: "",
+        solution: "Generate instant service quotes through a simple, customizable form. Customers select service type, job size, add-ons and see a live estimate.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/quotewave.png",
+        prompt: "",
+        url: "https://quotewave-0ckt.whacka.app"
+      },
+      {
+        name: "Clinic Booking w/ Approval",
+        title: "",
+        industry: "Healthcare",
+        icon: "🩺",
+        problem: "",
+        solution: "A booking app for a small dental clinic. Patients pick an open time slot to book a cleaning; each slot can only be taken by one patient and the front desk reviews/approves.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/clinicbookingwapproval.png",
+        prompt: "",
+        url: "https://tr-clinic-07fc7b.whacka.app"
+      },
+      {
+        name: "Calmara",
+        title: "",
+        industry: "Fitness",
+        icon: "💪",
+        problem: "",
+        solution: "Explore a weekly yoga schedule with easy booking and personal notes. A calm, minimal interface for yoga studios.",
+        metric: "",
+        hasImage: true,
+        imageUrl: "assets/calmara.png",
+        prompt: "",
+        url: "https://calmara.whacka.app"
+      },
       {
         name: "ReceiptBox",
         title: "Bookkeeping",
@@ -1070,18 +1376,6 @@
         url: "https://pulsefit-6394.whacka.app/"
       },
       {
-        name: "RunClub",
-        title: "Running Club",
-        industry: "Fitness",
-        icon: "💪",
-        problem: "Running club coaches email weekly plans and can't tell who's actually showing up or hitting target paces.",
-        solution: "A running club app: runners log workouts and view group leaderboards; coaches assign training plans and track attendance.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'RunClub' two-sided running club app. Runner side: log daily runs with distance and pace, view group leaderboard, and RSVP to group runs. Coach side: assign weekly training plans, track attendance, and celebrate milestones. Use energetic running colors and a pace-chart dashboard. Designed for local running clubs and coaches.",
-        url: null
-      },
-      {
         name: "CampSign",
         title: "Camp Registration",
         industry: "Education",
@@ -1089,33 +1383,10 @@
         problem: "Summer camps handle registration and waivers on paper, leading to missing medical info and chaotic check-in lines.",
         solution: "A camp registration app: parents register kids and sign digital waivers; camp staff manage rosters and medical notes.",
         metric: "",
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "assets/campsign.png",
         prompt: "Build a 'CampSign' two-sided summer camp registration app. Parent side: register campers, sign waivers, and upload medical notes and emergency contacts. Camp side: view rosters, filter by age group, and print check-in sheets. Use playful camp colors and a clear form-based flow. Designed for local summer camps and activity centers.",
-        url: null
-      },
-      {
-        name: "TutorTrack",
-        title: "Tutoring",
-        industry: "Education",
-        icon: "📚",
-        problem: "Private tutors recreate lesson plans from scratch, and parents have no visibility into what was covered each week.",
-        solution: "A tutoring app: students access materials and homework; tutors plan lessons and share progress notes with parents.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'TutorTrack' two-sided private tutoring app. Student side: view lesson materials, complete assigned exercises, and see upcoming topics. Tutor side: plan lessons, attach resources, and share weekly progress notes with parents. Use clean academic colors and a lesson timeline view. Designed for independent tutors and small tutoring centers.",
-        url: null
-      },
-      {
-        name: "VoiceVault",
-        title: "Voice Casting",
-        industry: "Creative",
-        icon: "🎨",
-        problem: "Casting directors dig through messy email attachments to find the right voice actor for a project.",
-        solution: "A voice casting app: actors upload tagged demo reels; casting directors search, filter, and request auditions.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'VoiceVault' two-sided voice casting app. Voice actor side: upload demo reels with tags for language, tone, and accent. Casting side: search and filter demos, save favorites, and request custom auditions. Use a media-dark theme with waveform previews. Designed for indie studios and voiceover agencies.",
-        url: null
+        url: "https://campsnap-kfbs.whacka.app/"
       },
       {
         name: "ArtDrop",
@@ -1125,21 +1396,10 @@
         problem: "Artists and commissioners lose track of references, deadlines, and payment milestones across scattered messages.",
         solution: "A commission management app: clients submit briefs and approve sketches; artists upload work-in-progress and invoices.",
         metric: "",
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "assets/artdrop.png",
         prompt: "Build an 'ArtDrop' two-sided art commission app. Client side: submit a commission brief with references, approve sketches, and release milestone payments. Artist side: upload work-in-progress, set milestone deadlines, and deliver final files. Use a creative dark canvas layout with image previews. Designed for freelance illustrators and commissioners.",
-        url: null
-      },
-      {
-        name: "SpaGift",
-        title: "Spa Gift Card",
-        industry: "Beauty",
-        icon: "💅",
-        problem: "Spas sell paper gift cards that get lost, expire without notice, and can't be tracked for redemptions.",
-        solution: "A spa gift card app: customers buy and redeem digital gift cards; spa staff track balances and package redemptions.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'SpaGift' two-sided spa gift card app. Customer side: buy a digital gift card, send it to someone, and check balance. Spa side: scan or enter codes to redeem, view remaining balance, and track gift card sales. Use relaxing spa greens and golds with a clean card wallet view. Designed for day spas and wellness centers.",
-        url: null
+        url: "https://inkspire-mrnu.whacka.app/"
       },
       {
         name: "BrowBook",
@@ -1149,9 +1409,10 @@
         problem: "Clients show vague reference photos and leave brow appointments unhappy because artists can't capture their desired shape.",
         solution: "A brow and lash app: clients save preferred styles and notes; artists review preferences and manage bookings.",
         metric: "",
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "assets/browbook.png",
         prompt: "Build a 'BrowBook' two-sided brow and lash studio app. Client side: save preferred brow shapes, upload reference photos, and book appointments. Artist side: view client style profile, manage appointment calendar, and add aftercare notes. Use soft beauty pastels and a gallery-style shape picker. Designed for brow bars and lash studios.",
-        url: null
+        url: "https://browmuse-4c7w.whacka.app/"
       },
       {
         name: "HandyFlow",
@@ -1161,33 +1422,10 @@
         problem: "Handymen forget special materials and clients don't know arrival times, causing repeated trips and no-shows.",
         solution: "A handyman job app: clients book jobs and track arrival; handymen see job checklists and material lists.",
         metric: "",
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "assets/handyflow.png",
         prompt: "Build a 'HandyFlow' two-sided handyman service app. Client side: describe the job, pick a time slot, and see the handyman's arrival status. Handyman side: view job checklist, required materials, and client notes, then mark complete with photos. Use practical tool-belt colors and a task checklist layout. Designed for independent handymen.",
-        url: null
-      },
-      {
-        name: "QuoteHome",
-        title: "Home Repair Bidding",
-        industry: "Home Services",
-        icon: "🏠",
-        problem: "Homeowners wait days for repair quotes, while contractors chase vague leads through scattered messages.",
-        solution: "A home repair bidding app: homeowners post jobs with photos; contractors submit quotes and schedule visits.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'QuoteHome' two-sided home repair quoting app. Homeowner side: post a job with photos, compare contractor quotes, and book a visit. Contractor side: view nearby jobs, submit quotes, and manage scheduled estimates. Use trustworthy blue and white cards with photo thumbnails. Designed for independent handymen and repair contractors.",
-        url: null
-      },
-      {
-        name: "LawnRoute",
-        title: "Lawn Care Routing",
-        industry: "Home Services",
-        icon: "🏠",
-        problem: "Lawn care crews waste fuel and time on inefficient daily routes, and customers don't know arrival windows.",
-        solution: "A lawn care routing app: homeowners book services and see ETA, while crews get optimized routes and mark jobs done.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'LawnRoute' two-sided lawn care service app. Homeowner side: book mowing or treatment, view crew ETA, and approve add-ons. Crew side: see optimized daily route, mark jobs complete, and log materials used. Use fresh green lawn-care colors and a map-based route view. Designed for local landscaping companies.",
-        url: null
+        url: "https://tooltap-xw9q.whacka.app/"
       },
       {
         name: "ReHub",
@@ -1197,81 +1435,10 @@
         problem: "Physical therapists can't tell if patients are doing home exercises, slowing recovery and reducing visit value.",
         solution: "A physical therapy app: patients follow exercise videos and log pain levels, while therapists assign routines and review progress.",
         metric: "",
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "assets/rehub.png",
         prompt: "Build a 'ReHub' two-sided physical therapy app. Patient side: view assigned exercises, log reps and pain levels, and message the therapist. Therapist side: build exercise plans, review patient logs, and adjust routines. Use motivating fitness colors and clear video cards. Designed for physical therapy clinics.",
-        url: null
-      },
-      {
-        name: "SmileRecall",
-        title: "Dental Recall",
-        industry: "Healthcare",
-        icon: "🩺",
-        problem: "Dental practices lose touch with patients between routine cleanings, leaving chairs empty and revenue missed.",
-        solution: "A dental recall app: patients receive personalized reminders and book cleanings, while practices track recall campaigns and fill gaps.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'SmileRecall' two-sided dental recall app. Patient side: receive cleaning reminders, pick a slot, and confirm insurance details. Practice side: filter patients by overdue status, send batch reminders, and track booked recalls. Use fresh dental whites and blues with a simple list view. Designed for independent dental practices.",
-        url: null
-      },
-      {
-        name: "CareVisit",
-        title: "Home Care Scheduling",
-        industry: "Healthcare",
-        icon: "🩺",
-        problem: "Families juggling home care for seniors struggle to track which caregiver is coming and what was done during each visit.",
-        solution: "A home care scheduling: families book visits and view caregiver notes, while agencies assign staff and log visit reports.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'CareVisit' two-sided home care scheduling app. Family side: book visits, view assigned caregiver, and read visit notes. Agency side: assign caregivers, optimize daily routes, and log care notes and vitals. Use calm healthcare tones and a calendar schedule view. Designed for home care agencies and family care coordinators.",
-        url: null
-      },
-      {
-        name: "GroupMart",
-        title: "Group Buying",
-        industry: "Retail",
-        icon: "🛍️",
-        problem: "Group-buy spreadsheets get messy and arrival alerts are easy to miss.",
-        solution: "A group-buying app for neighborhoods: residents place orders, and local stores run buys, send arrival alerts, and coordinate pickup.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'GroupMart' two-sided community group-buying app. Customer side: browse group-buy items, place order, and see pickup time and location. Store side: create a buy with deadline, send one-tap arrival notice, and view orders. Use neighborhood-market cards with a deadline countdown. Designed for convenience stores and community leaders.",
-        url: null
-      },
-      {
-        name: "WedLine",
-        title: "Wedding Planning Collaboration",
-        industry: "Services",
-        icon: "🔧",
-        problem: "Too many moving parts; tracking everything in spreadsheets and group chats leads to missed details.",
-        solution: "A wedding planning collaboration: couples follow a shared timeline while planners manage tasks and progress.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'WedLine' two-sided wedding planning app. Couple side: view shared timeline, mark tasks done, and add vendor notes. Planner side: create task lists, set due dates, and track progress. Use elegant wedding tones and a checklist timeline. Designed for independent wedding planners.",
-        url: null
-      },
-      {
-        name: "MarketReserve",
-        title: "Pop Up Market Reservations",
-        industry: "Retail",
-        icon: "🛍️",
-        problem: "Hot items sell out on-site, and potential pre-orders are lost.",
-        solution: "A pop-up market reservations: customers reserve limited-stock goods in advance; vendors manage inventory and pickup.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'MarketReserve' two-sided pop-up market app. Customer side: browse vendor items, reserve limited-stock goods, and pay at pickup. Vendor side: manage stock, view reservation list, and mark orders as picked up. Use a market-grid layout with sold-out badges. Designed for weekend market vendors.",
-        url: null
-      },
-      {
-        name: "PawPost",
-        title: "Pet Boarding Daily Report",
-        industry: "Pet Care",
-        icon: "🐾",
-        problem: "Owners wonder how their dog is doing and only get photos when they ask.",
-        solution: "A pet boarding daily report: owners view daily updates while hosts upload photos, meals, and walk notes.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'PawPost' two-sided pet boarding app. Owner side: open a share link to view daily photos, meals, and walk notes. Host side: upload daily report with photos and log meals, walks, and behavior notes. Use a timeline layout and pet-friendly colors. Designed for pet sitters and home boarding hosts.",
-        url: null
+        url: "https://theraflow-0dr3.whacka.app/"
       },
       {
         name: "TaskStamp",
@@ -1281,69 +1448,10 @@
         problem: "Homework check-ins shared in parent group chats are exhausting to tally.",
         solution: "A tutoring check-in app: parents upload task photos, while teachers assign work and track completion rates.",
         metric: "",
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "assets/taskstamp.png",
         prompt: "Build a 'TaskStamp' two-sided student check-in app. Parent side: view daily task, upload a photo as proof, and see a completion calendar. Teacher side: post tasks, review submissions, and track class completion rate. Use school-friendly colors and a calendar view. Designed for tutoring centers and training schools.",
-        url: null
-      },
-      {
-        name: "LaundryPing",
-        title: "Laundry Status",
-        industry: "Services",
-        icon: "🔧",
-        problem: "Customers don't know when their laundry is ready, so piles take up space.",
-        solution: "A laundry status app: customers check order status, and staff scan tickets to send ready-for-pickup alerts.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'LaundryPing' two-sided laundry pickup app. Customer side: enter ticket number to check status and receive ready notification. Shop side: scan ticket number to mark ready and send pickup alerts. Use fresh laundry blue and a simple ticket input. Designed for dry cleaners and laundry shops.",
-        url: null
-      },
-      {
-        name: "PicPick",
-        title: "Photo Proofing",
-        industry: "Creative",
-        icon: "🎨",
-        problem: "Sending proofs via cloud drives scatters client feedback.",
-        solution: "A photo proofing: clients pick favorites and leave retouch notes online; photographers view selections and export shot lists.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'PicPick' two-sided photographer proofing app. Client side: view watermarked proofs, tap to select favorites, and leave retouch notes per photo. Photographer side: upload galleries, see client selections, and export a shot list. Use a dark gallery background and clean thumbnails. Designed for portrait and wedding photographers.",
-        url: null
-      },
-      {
-        name: "BakeSlot",
-        title: "Bakery Pickup",
-        industry: "Food & Beverage",
-        icon: "☕",
-        problem: "Taking orders over messages is chaotic and pickup times do not match bake schedules.",
-        solution: "A bakery pickup: customers order by time slot, and bakers set capacity-based slots and prep lists.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'BakeSlot' two-sided bakery pickup app. Customer side: browse daily menu, place order, and choose a pickup window. Baker side: set available slots by production capacity and see prep list sorted by pickup time. Use cozy bakery cards and warm browns. Designed for home bakeries and pastry shops.",
-        url: null
-      },
-      {
-        name: "FixTrack",
-        title: "Repair Shop Tracker",
-        industry: "Services",
-        icon: "🔧",
-        problem: "Customers keep calling to ask whether their repair is done.",
-        solution: "A repair shop tracker: customers enter a code to check status, and shops update progress and notify pickup.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'FixTrack' two-sided repair shop app. Customer side: enter a tracking code to see repair status and quoted price. Shop side: update status, add repair notes, and notify customers when ready. Use status badges and tool-inspired colors. Designed for phone, bike, and electronics repair shops.",
-        url: null
-      },
-      {
-        name: "YogaSpot",
-        title: "Yoga Studio Booking",
-        industry: "Fitness",
-        icon: "💪",
-        problem: "Fully booked classes turn people away while quiet classes sit empty.",
-        solution: "A yoga studio booking: students see open spots and reserve, and owners set capacity and waitlists.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'YogaSpot' two-sided yoga studio app. Student side: view class schedule, see remaining spots, book classes, and join waitlist. Studio side: set class capacity, view bookings, and fill cancellations from waitlist. Use calm yoga tones and a calendar grid. Designed for yoga and pilates studios.",
-        url: null
+        url: "https://tasknest-ewy1.whacka.app/"
       },
       {
         name: "SnipQueue",
@@ -1353,105 +1461,10 @@
         problem: "Clients wait too long in shop or wander nearby and miss their turn.",
         solution: "A barbershop queue: customers grab a number via QR and track their place, while staff call numbers and monitor the waitlist.",
         metric: "",
-        hasImage: false,
+        hasImage: true,
+        imageUrl: "assets/snipqueue.png",
         prompt: "Build a 'SnipQueue' two-sided barbershop queue app. Customer side: scan QR to take a number, see live queue position, and get notified before turn. Shop side: call next number and see waiting list with estimated wait times. Use barber-pole accents and a bold number display. Designed for neighborhood barbershops.",
-        url: null
-      },
-      {
-        name: "BloomOrder",
-        title: "Flower Shop Pre Order",
-        industry: "Retail",
-        icon: "🛍️",
-        problem: "Holiday orders explode and handwritten notes lead to missed orders.",
-        solution: "A flower shop pre-order: customers order ahead with delivery dates and messages; florists group orders by date for prep and delivery.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'BloomOrder' two-sided flower shop app. Customer side: pre-order bouquets with delivery date and gift message. Florist side: orders grouped by delivery date, printable prep list, and delivery route. Use floral cards with soft pinks and greens. Designed for local flower shops.",
-        url: null
-      },
-      {
-        name: "CleanRoute",
-        title: "Cleaning Service Scheduler",
-        industry: "Home Services",
-        icon: "🏠",
-        problem: "Cleaner scheduling over the phone creates overlapping routes and wasted time.",
-        solution: "A cleaning service scheduler: customers see arrival windows, and the office assigns jobs and optimizes daily routes.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'CleanRoute' two-sided cleaning service app. Customer side: see assigned cleaner, arrival window, and check-in status. Office side: assign jobs by area, sort daily route by address, and mark jobs complete. Use map-like cards and fresh cleaning colors. Designed for small cleaning companies.",
-        url: null
-      },
-      {
-        name: "ShelfCall",
-        title: "Indie Bookstore Alerts",
-        industry: "Creative",
-        icon: "🎨",
-        problem: "Great arrivals go unnoticed, and event sign-ups rely on scattered social posts.",
-        solution: "A indie bookstore alerts: readers subscribe to new arrivals and events, while staff manage sign-ups and push notifications.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'ShelfCall' two-sided indie bookstore app. Reader side: subscribe to book arrival alerts and sign up for events. Shop side: send alerts, manage event registrations, and view subscriber list. Use warm paper tones and book cover thumbnails. Designed for independent bookstores.",
-        url: null
-      },
-      {
-        name: "ClassCount",
-        title: "Class Credit Manager",
-        industry: "Education",
-        icon: "📚",
-        problem: "Parents keep asking about remaining credits, and teachers dig through paper records.",
-        solution: "A class-credit manager: parents check balances and history, while teachers mark attendance and deduct credits.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'ClassCount' two-sided tutoring app. Parent side: check remaining class credits and view attendance history. Teacher side: mark attendance per session, deduct credits, and see students with low balances. Use clean school colors and simple counters. Designed for private tutors and small learning centers.",
-        url: null
-      },
-      {
-        name: "NailBook",
-        title: "Nail Salon Booking",
-        industry: "Beauty",
-        icon: "💅",
-        problem: "Clients browse designs on Instagram/Pinterest, then spend ages explaining what they want in person.",
-        solution: "A nail salon booking: clients pick designs and time slots, and artists see schedules with client notes and reference images.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'NailBook' two-sided nail salon app. Client side: browse artist portfolio, select a design, pick nail shape, and book a slot. Artist side: calendar with appointments, design requests, and client notes. Use a gallery grid and pastel beauty tones. Designed for independent nail artists and studios.",
-        url: null
-      },
-      {
-        name: "PawLog",
-        title: "Pet Grooming Records",
-        industry: "Pet Care",
-        icon: "🐾",
-        problem: "Appointment requests scattered across messages make service history hard to track.",
-        solution: "A pet grooming records: owners view service history, and groomers look up allergies and preferences.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'PawLog' two-sided pet grooming app. Owner side: view pet profile, book next appointment, and see past service notes. Groomer side: searchable pet records with allergies, skin notes, owner preferences, and upcoming appointment alerts. Use friendly pet avatars and soft colors. Designed for pet groomers and boarding hosts.",
-        url: null
-      },
-      {
-        name: "ClinicForm",
-        title: "Clinic Intake",
-        industry: "Healthcare",
-        icon: "🩺",
-        problem: "Front-desk paper forms take time and are prone to errors.",
-        solution: "A clinic intake: patients fill forms on their phones while waiting, and staff review the queue and print summaries.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'ClinicForm' two-sided clinic intake app. Patient side: fill symptoms, allergies, and contact info on phone while waiting. Staff side: see a queue of submitted forms, print a summary, and mark patients as seen. Use calm medical blue and large tap-friendly fields. Designed for small clinics and dentists.",
-        url: null
-      },
-      {
-        name: "GymKeep",
-        title: "Gym Check In Tool",
-        industry: "Fitness",
-        icon: "💪",
-        problem: "Manual attendance tracking misses members who are about to churn.",
-        solution: "A gym check-in tool: members scan a QR to check in, and owners see visit data and churn alerts.",
-        metric: "",
-        hasImage: false,
-        prompt: "Build a 'GymKeep' two-sided gym app. Customer side: scan a QR code to check in and view weekly visit count. Business side: owner dashboard shows all members' last visit, flags members inactive over 14 days, and exports attendance CSV. Use bold energy colors and simple stat cards. Designed for independent gyms and studios.",
-        url: null
+        url: "https://queuecut-xewl.whacka.app/"
       },
       {
         name: "BrewQueue",
@@ -1465,12 +1478,28 @@
         imageUrl: "assets/brewqueue.png",
         prompt: "Build a 'BrewQueue' two-sided coffee shop app. Customer side: first select a 15-minute pickup slot from a grid of available time buttons, then browse the menu and add drinks. Shop owner side: a dashboard showing today's orders sorted by pickup time, plus a prep queue with 'pending' and 'ready' toggles. Use warm brown cards and large selectable time-slot buttons on the home screen. Designed for independent coffee shops.",
         url: "https://sipslot-f1k4.whacka.app/"
-      },
+      }
     ];
 
     const grid = document.getElementById('caseGrid');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const toast = document.getElementById('toast');
+
+    function appendUtmParams(url, content) {
+      if (!url) return url;
+      try {
+        const u = new URL(url, location.href);
+        const isWhacka = u.hostname === 'whacka.app' || u.hostname.endsWith('.whacka.app');
+        if (!isWhacka) return url;
+        if (!u.searchParams.has('utm_source')) u.searchParams.set('utm_source', 'smb_digital_playbook');
+        if (!u.searchParams.has('utm_medium')) u.searchParams.set('utm_medium', 'referral');
+        if (!u.searchParams.has('utm_campaign')) u.searchParams.set('utm_campaign', 'smb_cases');
+        if (content && !u.searchParams.has('utm_content')) u.searchParams.set('utm_content', content);
+        return u.toString();
+      } catch (e) {
+        return url;
+      }
+    }
 
     function showToast(msg) {
       toast.textContent = msg;
@@ -1479,15 +1508,29 @@
     }
 
     function copyPrompt(el) {
-      let prompt = '';
-      try {
-        prompt = JSON.parse(el.getAttribute('data-prompt') || '""');
-      } catch (e) {
-        showToast('Copy failed — please copy manually');
+      const promptId = el.getAttribute('data-track-prompt-id');
+      const caseData = cases.find(c => c.name === promptId);
+      const prompt = caseData ? caseData.prompt : '';
+
+      if (!prompt || !prompt.trim()) {
+        showToast('No prompt available for this case');
         return;
       }
+
       navigator.clipboard.writeText(prompt).then(() => {
-        showToast('Prompt copied — paste it into whacka');
+        const category = el.getAttribute('data-track-category');
+
+        const buildLink = document.createElement('a');
+        buildLink.href = appendUtmParams('https://whacka.app/dashboard', promptId || '');
+        buildLink.target = '_blank';
+        buildLink.className = 'btn btn-primary build-now';
+        buildLink.textContent = 'Build now';
+        buildLink.setAttribute('data-track', 'cta_build_now');
+        buildLink.setAttribute('data-track-prompt-id', promptId || '');
+        buildLink.setAttribute('data-track-category', category || '');
+
+        el.replaceWith(buildLink);
+        setTimeout(() => buildLink.replaceWith(el), 5000);
       }).catch(() => {
         showToast('Copy failed — please copy manually');
       });
@@ -1513,21 +1556,24 @@
           ? `<img src="${imageSrc}" alt="${c.name} app screenshot">`
           : `<div class="phone-placeholder"><div class="phone-placeholder-icon">${c.icon}</div><div class="phone-placeholder-name">${c.name}</div></div>`;
         const metricHtml = c.metric ? `<div class="case-metric">↗ ${c.metric}</div>` : '';
-        const openUrl = c.url || 'https://whacka.app/dashboard';
+        const openUrl = appendUtmParams(c.url || 'https://whacka.app/dashboard', c.name);
         const openLabel = c.url ? 'Open app →' : 'Open whacka';
-        const safePrompt = JSON.stringify(c.prompt).replace(/'/g, "&#39;");
+        const hasPrompt = c.prompt && c.prompt.trim();
+        const copyButton = hasPrompt
+          ? `<button class="btn btn-primary" data-track="prompt_copy" data-track-prompt-id="${c.name}" data-track-category="${c.industry}" onclick='copyPrompt(this)'>Copy Prompt</button>`
+          : `<button class="btn btn-primary" disabled style="opacity:0.5;cursor:not-allowed;" title="Prompt not available">Copy Prompt</button>`;
 
         card.innerHTML = `
           <div class="${mediaClass}">
-            <span class="case-tag">${c.industry}</span>
             ${mediaContent}
           </div>
           <div class="case-card-body">
+            <span class="case-tag">${c.industry}</span>
             <h3 class="serif">${c.name} · ${c.title}</h3>
             <p class="case-problem">${c.solution} ${c.problem}</p>
             ${metricHtml}
             <div class="case-card-actions">
-              <button class="btn btn-primary" data-track="prompt_copy" data-track-prompt-id="${c.name}" data-track-category="${c.industry}" data-prompt="${safePrompt}" onclick='copyPrompt(this)'>Copy Prompt</button>
+              ${copyButton}
               <a href="${openUrl}" target="_blank" class="btn btn-secondary" data-track="cta_try_it" data-track-prompt-id="${c.name}" data-track-category="${c.industry}">${openLabel}</a>
             </div>
           </div>
@@ -1545,7 +1591,7 @@
               const cat = entry.target.getAttribute('data-category');
               if (id && !viewedCases.has(id)) {
                 viewedCases.add(id);
-                window._phAnalytics && window._phAnalytics.track('prompt_view', { prompt_id: id, category: cat });
+                posthog.capture('prompt_view', { prompt_id: id, category: cat });
               }
             }
           });
@@ -1563,6 +1609,26 @@
     });
 
     renderCases();
+
+    // Inject dynamic ItemList structured data for SEO/GEO
+    (function injectItemList() {
+      const listData = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Small Business Digital Setups",
+        "itemListElement": cases.map((c, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": c.name,
+          "description": c.solution || c.problem,
+          "url": c.url || undefined
+        })).filter(item => item.url)
+      };
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(listData);
+      document.head.appendChild(script);
+    })();
 
     // Draggable phone stack
     (function initPhoneStack() {
@@ -1687,62 +1753,9 @@
     })();
   </script>
 
-  <!-- Analytics: local-first event collection for the dashboard -->
+  <!-- PostHog custom event tracking -->
   <script>
     (function() {
-      const STORAGE_KEY = 'ph_analytics';
-      const SESSION_KEY = 'ph_session_id';
-
-      function getSessionId() {
-        try {
-          let sid = sessionStorage.getItem(SESSION_KEY);
-          if (!sid) {
-            sid = 'sess_' + Math.random().toString(36).slice(2, 12);
-            sessionStorage.setItem(SESSION_KEY, sid);
-          }
-          return sid;
-        } catch (e) {
-          return 'sess_fallback';
-        }
-      }
-
-      function getMeta() {
-        const p = new URLSearchParams(location.search);
-        const w = window.innerWidth;
-        return {
-          referrer: document.referrer || '',
-          utm_source: p.get('utm_source') || '',
-          utm_medium: p.get('utm_medium') || '',
-          utm_campaign: p.get('utm_campaign') || '',
-          device: w < 768 ? 'mobile' : w < 1024 ? 'tablet' : 'desktop',
-          screen: w + 'x' + window.innerHeight,
-          url: location.href,
-          path: location.pathname
-        };
-      }
-
-      function track(type, data) {
-        try {
-          const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"events":[]}');
-          stored.events.push({
-            id: Math.random().toString(36).slice(2, 10),
-            type,
-            ts: Date.now(),
-            data: data || {},
-            session: getSessionId(),
-            meta: getMeta()
-          });
-          if (stored.events.length > 10000) stored.events = stored.events.slice(-10000);
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-        } catch (e) {}
-      }
-
-      window._phAnalytics = { track };
-
-      // Page & session
-      track('page_view', { page: document.title, path: location.pathname });
-      track('session_start', { page: document.title, path: location.pathname });
-
       // Scroll depth
       const scrollMilestones = new Set();
       window.addEventListener('scroll', function() {
@@ -1752,14 +1765,14 @@
         [25, 50, 75, 90, 100].forEach(function(m) {
           if (pct >= m && !scrollMilestones.has(m)) {
             scrollMilestones.add(m);
-            track('scroll_depth', { percent: m });
+            posthog.capture('scroll_depth', { percent: m });
           }
         });
       }, { passive: true });
 
       // Time on page
       [30, 60, 120, 300, 600].forEach(function(sec) {
-        setTimeout(function() { track('time_on_page', { seconds: sec }); }, sec * 1000);
+        setTimeout(function() { posthog.capture('time_on_page', { seconds: sec }); }, sec * 1000);
       });
 
       // Section views
@@ -1769,7 +1782,7 @@
           entries.forEach(function(entry) {
             if (entry.isIntersecting && entry.target.id && !viewedSections.has(entry.target.id)) {
               viewedSections.add(entry.target.id);
-              track('section_view', { section: entry.target.id, threshold: Math.round(entry.intersectionRatio * 100) });
+              posthog.capture('section_view', { section: entry.target.id, threshold: Math.round(entry.intersectionRatio * 100) });
             }
           });
         }, { threshold: [0.25, 0.5, 0.75] });
@@ -1794,14 +1807,14 @@
           data.href = el.href;
           data.isExternal = el.hostname !== location.hostname;
         }
-        track(type, data);
+        posthog.capture(type, data);
       });
 
       // Track outbound link clicks that don't have explicit data-track
       document.addEventListener('click', function(e) {
         const link = e.target.closest('a[href^="http"]:not([data-track])');
         if (!link) return;
-        track('outbound_click', { href: link.href, text: (link.textContent || '').trim().slice(0, 40) });
+        posthog.capture('outbound_click', { href: link.href, text: (link.textContent || '').trim().slice(0, 40) });
       });
     })();
   </script>

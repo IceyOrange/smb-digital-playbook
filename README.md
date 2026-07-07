@@ -1,6 +1,6 @@
 # Small Business Digital Playbook
 
-> 40 real-world digital setups for small businesses — each with a copy-ready Prompt for [whacka](https://whacka.app) and a live app example.
+> 50 real-world digital setups for small businesses — each with a copy-ready Prompt for [whacka](https://whacka.app) and a live app example.
 
 **Live preview**: https://smb-digital-playbook.vercel.app (replace with your custom domain once connected)
 
@@ -57,6 +57,40 @@ The site content is synced from the Notion database `ideas_for_SMB`. To update:
       /Users/Lovegood/Desktop/app_prompt_lib/smb-digital-playbook/index.html
    ```
 4. Commit and push; Vercel will redeploy automatically.
+
+## Analytics
+
+This site uses [PostHog](https://posthog.com) for product analytics.
+
+1. Create a free PostHog project.
+2. Copy your **Project API Key** (starts with `phc_`).
+3. Replace `phc_YOUR_POSTHOG_TOKEN` in `index.html` with your real key.
+4. If you chose the EU data center, also change `api_host` to `https://eu.i.posthog.com`.
+5. Deploy; events will start flowing to PostHog.
+
+### Tracked events
+
+- `pageview` / `pageleave` (automatic)
+- `session_start` (automatic via PostHog sessions)
+- `scroll_depth` — 25%, 50%, 75%, 90%, 100%
+- `time_on_page` — 30s, 60s, 120s, 300s, 600s
+- `section_view` — which page section was viewed
+- `cta_click` / `cta_try_it` / `cta_build_now` / `nav_click` / `category_filter` / `prompt_copy` — from `data-track` attributes
+- `prompt_view` — when a case card enters the viewport
+- `outbound_click` — clicks on external links without explicit `data-track`
+
+### UTM attribution
+
+All outbound links to `*.whacka.app` automatically include:
+
+```
+utm_source=smb_digital_playbook
+utm_medium=referral
+utm_campaign=smb_cases
+utm_content=<AppName>
+```
+
+This lets you identify traffic from this playbook inside the whacka dashboard.
 
 ---
 
