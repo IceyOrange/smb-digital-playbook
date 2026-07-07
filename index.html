@@ -8,13 +8,17 @@
   <meta name="keywords" content="small business digital setup, no-code app, SMB automation, coffee shop app, retail app, fitness booking app, salon booking app, clinic booking app, whacka prompt, digital playbook">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://smb-digital-playbook.vercel.app/">
+  <link rel="icon" href="assets/smb.svg" type="image/svg+xml">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://smb-digital-playbook.vercel.app/">
   <meta property="og:title" content="Small Business Playbook — 25 Real Shop Digital Setups">
   <meta property="og:description" content="Browse 25 real small business digital setups with copy-ready prompts and live apps. No code needed.">
-  <meta property="og:image" content="https://smb-digital-playbook.vercel.app/assets/brewqueue.png">
+  <meta property="og:image" content="https://smb-digital-playbook.vercel.app/assets/og-playbook.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Small Business Digital Playbook — 25 real shop digital setups">
   <meta property="og:site_name" content="Small Business Playbook">
 
   <!-- Twitter Card -->
@@ -22,7 +26,7 @@
   <meta name="twitter:url" content="https://smb-digital-playbook.vercel.app/">
   <meta name="twitter:title" content="Small Business Playbook — 25 Real Shop Digital Setups">
   <meta name="twitter:description" content="Browse 25 real small business digital setups with copy-ready prompts and live apps. No code needed.">
-  <meta name="twitter:image" content="https://smb-digital-playbook.vercel.app/assets/brewqueue.png">
+  <meta name="twitter:image" content="https://smb-digital-playbook.vercel.app/assets/og-playbook.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,46 +47,101 @@
   }
   </script>
 
-  <!-- Schema.org: FAQPage (GEO-friendly) -->
+
+  <!-- Schema.org: Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@type": "Organization",
+    "name": "Small Business Playbook",
+    "url": "https://smb-digital-playbook.vercel.app/",
+    "logo": "https://smb-digital-playbook.vercel.app/assets/og-playbook.png",
+    "sameAs": [
+      "https://whacka.app"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
       {
-        "@type": "Question",
-        "name": "What is the Small Business Playbook?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Small Business Playbook is a showcase of real-world digital setups for small businesses. Each case includes the original problem, a copy-ready prompt, and a live app example built with whacka."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to code to use these setups?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No coding is required. You can copy the English prompt from any case, paste it into whacka.app, and get a working mini-app tailored to your shop."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which industries are covered?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The playbook covers Food & Beverage, Retail, Fitness, Beauty, Education, Healthcare, Services, Pet Care, Home Services, and Creative businesses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I customize the app for my own business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Each setup is a starting point. After generating the app on whacka, you can change the name, colors, items, and workflow to match your exact business needs."
-        }
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://smb-digital-playbook.vercel.app/"
       }
     ]
   }
+  </script>
+
+  <!-- Schema.org: FAQPage (GEO-friendly) -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Small Business Playbook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Small Business Playbook is a showcase of real-world digital setups for small businesses. Each case includes the original problem, a copy-ready prompt, and a live app example built with whacka."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to code to use these setups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No coding is required. You can copy the English prompt from any case, paste it into whacka.app, and get a working mini-app tailored to your shop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which industries are covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The playbook covers Food & Beverage, Retail, Fitness, Beauty, Education, Healthcare, Services, Pet Care, Home Services, and Creative businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customize the app for my own business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each setup is a starting point. After generating the app on whacka, you can change the name, colors, items, and workflow to match your exact business needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from Shopify, Square, or hiring a developer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike general website builders, each playbook setup is a ready-to-run mini-app shaped for a specific shop workflow \u2014 ordering, booking, catalog, queue, or quote. You do not write code or manage plugins. Copy the prompt into whacka, answer a few questions about your business, and get a working app in minutes instead of weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to build one of these apps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The playbook itself is free to browse. Building on whacka has a free tier for experiments; paid tiers are typically a small monthly subscription. For most small shops, the total cost is far below custom development or enterprise software."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I try a setup before using it for my real business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every case links to a live app example. Open it, tap through the workflow, and see how it feels. When you are ready, copy the prompt and generate your own version with your name, items, prices, and hours."
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -275,24 +334,51 @@
       color: var(--accent);
     }
 
-    @keyframes buildNowIn {
-      from { opacity: 0; transform: scale(0.96); }
+    /* Primary action button states */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+    }
+
+    @keyframes buildReveal {
+      from { opacity: 0.6; transform: scale(0.97); }
       to { opacity: 1; transform: scale(1); }
     }
 
-    .btn-primary.build-now {
-      animation: buildNowIn 0.25s ease;
+    @keyframes buildPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(196, 93, 43, 0.35); }
+      50% { box-shadow: 0 0 0 8px rgba(196, 93, 43, 0); }
     }
 
-    .btn-primary.build-now::after {
-      content: '';
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      border-top: 2.5px solid currentColor;
-      border-right: 2.5px solid currentColor;
-      transform: rotate(45deg) translateY(0.5px);
-      margin-left: 5px;
+    .case-card-actions .btn-primary[data-action-state="copy"] {
+      background: var(--green);
+    }
+
+    .case-card-actions .btn-primary[data-action-state="copy"]:hover {
+      background: #3d6a4a;
+    }
+
+    .btn-primary.is-build {
+      background: var(--accent);
+      color: white;
+      animation: buildReveal 0.3s ease, buildPulse 2s ease-in-out 0.3s 2;
+    }
+
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .btn-icon svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
     }
 
     .hero-visual {
@@ -327,15 +413,14 @@
     }
 
     .phone-arrow {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      border: 1.5px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      font-size: 1.2rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -343,9 +428,16 @@
       flex-shrink: 0;
     }
 
+    .phone-arrow svg {
+      width: 18px;
+      height: 18px;
+    }
+
     .phone-arrow:hover {
       border-color: var(--accent);
+      background: var(--accent-light);
       color: var(--accent);
+      transform: translateY(-1px);
     }
 
     .phone {
@@ -375,22 +467,22 @@
     }
 
     .phone:nth-child(1) {
-      transform: rotate(9deg) scale(1);
+      transform: rotate(7.5deg) scale(1) translateX(7.5px);
       z-index: 4;
     }
 
     .phone:nth-child(2) {
-      transform: rotate(-9deg) scale(0.95);
+      transform: rotate(-7.5deg) scale(0.95) translateX(-7.5px);
       z-index: 1;
     }
 
     .phone:nth-child(3) {
-      transform: rotate(-3deg) scale(0.95);
+      transform: rotate(-2.5deg) scale(0.95) translateX(-2.5px);
       z-index: 2;
     }
 
     .phone:nth-child(4) {
-      transform: rotate(3deg) scale(0.95);
+      transform: rotate(2.5deg) scale(0.95) translateX(2.5px);
       z-index: 3;
     }
 
@@ -411,22 +503,25 @@
 
     .hero-stats {
       display: flex;
-      gap: var(--space-md);
+      gap: var(--space-sm);
       margin-top: var(--space-lg);
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
 
     .stat-pill {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 12px 20px;
+      padding: 10px 16px;
       border-radius: 100px;
       box-shadow: var(--shadow);
       font-size: 0.9rem;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      white-space: nowrap;
     }
 
     .stat-pill strong {
-      display: block;
       font-size: 1.3rem;
       color: var(--accent);
     }
@@ -684,6 +779,13 @@
     .case-card-actions .btn {
       padding: 10px 18px;
       font-size: 0.9rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .case-card-actions .btn-primary {
+      min-width: 150px;
+      justify-content: center;
     }
 
     /* Featured Case */
@@ -861,13 +963,112 @@
       color: white;
     }
 
+    /* FAQ */
+    .faq-section {
+      padding: var(--space-2xl) var(--space-md);
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-inner h2 {
+      text-align: center;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: var(--space-xl);
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .faq-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md);
+    }
+    .faq-item summary {
+      font-size: 1.15rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item p {
+      color: var(--text-secondary);
+      margin-top: var(--space-sm);
+      line-height: 1.7;
+    }
+
     /* Footer */
     .site-footer {
-      padding: var(--space-lg) var(--space-md);
+      padding: var(--space-2xl) var(--space-md) var(--space-lg);
       text-align: center;
       color: var(--text-secondary);
       font-size: 0.9rem;
       border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+      text-align: left;
+    }
+    .footer-brand h3 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-xs);
+      color: var(--text);
+    }
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .footer-links h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-sm);
+      color: var(--text);
+    }
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom {
+      margin-top: var(--space-lg);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: repeat(2, 1fr); text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
     }
 
     /* Toast */
@@ -911,6 +1112,16 @@
         position: relative;
         margin-top: var(--space-md);
         justify-content: center;
+        gap: 8px;
+      }
+
+      .stat-pill {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+      }
+
+      .stat-pill strong {
+        font-size: 1rem;
       }
 
       .promise-inner,
@@ -1060,22 +1271,26 @@
       <div class="hero-visual">
         <div class="phone-stack" id="phoneStack">
           <div class="phone" data-index="0">
-            <img src="assets/browbook.png" alt="BrowBook brow and lash studio app" class="phone-screen" draggable="false">
+            <img src="assets/browbook.png" alt="BrowBook brow and lash studio app" class="phone-screen" draggable="false" width="768" height="1262" fetchpriority="high">
           </div>
           <div class="phone" data-index="1">
-            <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app" class="phone-screen" draggable="false">
+            <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app" class="phone-screen" draggable="false" width="780" height="1274" loading="eager">
           </div>
           <div class="phone" data-index="2">
-            <img src="assets/handyflow.png" alt="HandyFlow handyman job app" class="phone-screen" draggable="false">
+            <img src="assets/handyflow.png" alt="HandyFlow handyman job app" class="phone-screen" draggable="false" width="768" height="1262" loading="eager">
           </div>
           <div class="phone" data-index="3">
-            <img src="assets/handmadecandlestorefront.png" alt="Little Shop handmade candle storefront app" class="phone-screen" draggable="false">
+            <img src="assets/handmadecandlestorefront.png" alt="LittleShop handmade candle storefront app" class="phone-screen" draggable="false" width="752" height="1342" loading="eager">
           </div>
         </div>
         <div class="phone-controls">
-          <button class="phone-arrow" id="phonePrev" aria-label="Previous card">←</button>
-          <p class="drag-hint">← Swipe or use arrows →</p>
-          <button class="phone-arrow" id="phoneNext" aria-label="Next card">→</button>
+          <button class="phone-arrow" id="phonePrev" aria-label="Previous card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <p class="drag-hint">Swipe or click to browse</p>
+          <button class="phone-arrow" id="phoneNext" aria-label="Next card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1149,7 +1364,7 @@
         </div>
       </div>
       <div class="featured-visual">
-        <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app">
+        <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app" width="780" height="1274">
       </div>
     </div>
   </section>
@@ -1172,6 +1387,42 @@
     </div>
   </section>
 
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <h2 class="serif">Common questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="serif">What is the Small Business Playbook?</summary>
+          <p>The Small Business Playbook is a showcase of real-world digital setups for small businesses. Each case includes the original problem, a copy-ready prompt, and a live app example built with whacka.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="serif">Do I need to code to use these setups?</summary>
+          <p>No coding is required. You can copy the English prompt from any case, paste it into whacka.app, and get a working mini-app tailored to your shop.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="serif">Which industries are covered?</summary>
+          <p>The playbook covers Food & Beverage, Retail, Fitness, Beauty, Education, Healthcare, Services, Pet Care, Home Services, and Creative businesses.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="serif">Can I customize the app for my own business?</summary>
+          <p>Yes. Each setup is a starting point. After generating the app on whacka, you can change the name, colors, items, and workflow to match your exact business needs.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="serif">How is this different from Shopify, Square, or hiring a developer?</summary>
+          <p>Unlike general website builders, each playbook setup is a ready-to-run mini-app shaped for a specific shop workflow. You do not write code or manage plugins. Copy the prompt into whacka, answer a few questions, and get a working app in minutes.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="serif">How much does it cost to build one of these apps?</summary>
+          <p>The playbook is free to browse. Building on whacka has a free tier for experiments; paid tiers are typically a small monthly subscription. For most small shops, the total cost is far below custom development.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="serif">Can I try a setup before using it for my real business?</summary>
+          <p>Yes. Every case links to a live app example. Open it, tap through the workflow, and when you are ready, copy the prompt to generate your own version with your name, items, prices, and hours.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="cta" id="cta">
     <h2 class="serif">Your shop deserves a setup that actually fits</h2>
     <p>Coffee shop, nail studio, gym, convenience store — it doesn't matter. Pick one case and try it. The cost of experimenting is basically zero.</p>
@@ -1179,7 +1430,40 @@
   </section>
 
   <footer class="site-footer">
-    <p>Small Business Playbook · Digital setups grown from real shop floors</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3 class="serif">Small Business Playbook</h3>
+        <p>Digital setups grown from real shop floors. Browse 25 real cases, copy the prompt, and build your own version on whacka.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#cases">Case Studies</a></li>
+          <li><a href="#featured">Featured Case</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://whacka.app" target="_blank" rel="noopener">Build on whacka</a></li>
+          <li><a href="sitemap.xml">Sitemap</a></li>
+          <li><a href="robots.txt">Robots</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="mailto:lovegood@inspirix.ai">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Small Business Playbook. All rights reserved.</p>
+    </div>
   </footer>
 
   <div class="toast" id="toast">Prompt copied</div>
@@ -1239,7 +1523,7 @@
         url: "https://booksy-ligv.whacka.app"
       },
       {
-        name: "QR Menu + Kitchen Orders",
+        name: "MenuTap",
         title: "",
         industry: "Food & Beverage",
         icon: "☕",
@@ -1248,7 +1532,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/qrmenukitchenorders.png",
-        prompt: "Build a 'QR Menu' cafe ordering app. Customer side: scan a QR code at the table, browse the digital menu, add items to cart, and place an order without logging in. Kitchen side: see incoming orders in real-time with table numbers and item details. Use warm cafe colors, large menu cards, and clear category tabs. Designed for cafes and casual restaurants.",
+        prompt: "Build a 'MenuTap' cafe ordering app. Customer side: scan a QR code at the table, browse the digital menu, add items to cart, and place an order without logging in. Kitchen side: see incoming orders in real-time with table numbers and item details. Use warm cafe colors, large menu cards, and clear category tabs. Designed for cafes and casual restaurants.",
         url: "https://tr-qrmenu-6b2ee1.whacka.app"
       },
       {
@@ -1265,16 +1549,16 @@
         url: "https://theluxe.whacka.app"
       },
       {
-        name: "Handmade Candle Storefront",
-        title: "Little Shop",
+        name: "LittleShop",
+        title: "Handmade Candle Storefront",
         industry: "Retail",
         icon: "🛍️",
         problem: "",
-        solution: "A little shop app for handmade candles: people browse photos and prices, add to cart, and pay. The owner sees orders in a dashboard.",
+        solution: "A handmade candle storefront app: people browse photos and prices, add to cart, and pay. The owner sees orders in a dashboard.",
         metric: "",
         hasImage: true,
         imageUrl: "assets/handmadecandlestorefront.png",
-        prompt: "Build a 'Little Shop' handmade candle storefront app. Shopper side: browse product photos and prices, add to cart, and check out. Owner side: manage products, view orders, and mark shipments. Use cozy warm tones, simple product grids, and soft card shadows. Designed for handmade goods sellers and small boutiques.",
+        prompt: "Build a 'LittleShop' handmade candle storefront app. Shopper side: browse product photos and prices, add to cart, and check out. Owner side: manage products, view orders, and mark shipments. Use cozy warm tones, simple product grids, and soft card shadows. Designed for handmade goods sellers and small boutiques.",
         url: "https://tr-shop-17c937.whacka.app"
       },
       {
@@ -1291,7 +1575,7 @@
         url: "https://quotewave-0ckt.whacka.app"
       },
       {
-        name: "Clinic Booking w/ Approval",
+        name: "ClinicBook",
         title: "",
         industry: "Healthcare",
         icon: "🩺",
@@ -1300,7 +1584,7 @@
         metric: "",
         hasImage: true,
         imageUrl: "assets/clinicbookingwapproval.png",
-        prompt: "Build a 'Clinic Booking' appointment app for small clinics. Patient side: view available slots, book a cleaning or checkup, and receive confirmation. Front desk side: review pending appointments, approve or reschedule, and manage the calendar. Use calm medical tones, a clear time-slot grid, and appointment status badges. Designed for dental and small medical clinics.",
+        prompt: "Build a 'ClinicBook' appointment app for small clinics. Patient side: view available slots, book a cleaning or checkup, and receive confirmation. Front desk side: review pending appointments, approve or reschedule, and manage the calendar. Use calm medical tones, a clear time-slot grid, and appointment status badges. Designed for dental and small medical clinics.",
         url: "https://tr-clinic-07fc7b.whacka.app"
       },
       {
@@ -1539,32 +1823,52 @@
       setTimeout(() => toast.classList.remove('show'), 2000);
     }
 
-    function copyPrompt(el) {
-      const promptId = el.getAttribute('data-track-prompt-id');
+    const ICONS = {
+      copy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
+      external: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`
+    };
+
+    function resetPrimaryButton(btn) {
+      btn.classList.remove('is-build');
+      btn.setAttribute('data-action-state', 'copy');
+      btn.setAttribute('data-track', 'prompt_copy');
+      btn.removeAttribute('aria-label');
+      btn.disabled = false;
+      btn.innerHTML = `<span class="btn-icon">${ICONS.copy} Copy Prompt</span>`;
+    }
+
+    function transitionToBuild(btn) {
+      btn.classList.add('is-build');
+      btn.setAttribute('data-action-state', 'build');
+      btn.setAttribute('data-track', 'cta_build_now');
+      btn.setAttribute('aria-label', 'Build your app on whacka (opens in new tab)');
+      btn.disabled = false;
+      btn.innerHTML = `<span class="btn-icon">${ICONS.external} Build now</span>`;
+    }
+
+    function handlePrimaryAction(btn) {
+      const state = btn.getAttribute('data-action-state') || 'copy';
+      if (state === 'build') {
+        const promptId = btn.getAttribute('data-track-prompt-id');
+        const url = appendUtmParams('https://whacka.app/dashboard', promptId || '');
+        window.open(url, '_blank', 'noopener,noreferrer');
+        resetPrimaryButton(btn);
+      } else {
+        copyPrompt(btn);
+      }
+    }
+
+    function copyPrompt(btn) {
+      const promptId = btn.getAttribute('data-track-prompt-id');
       const caseData = cases.find(c => c.name === promptId);
       const prompt = caseData ? caseData.prompt : '';
 
-      if (!prompt || !prompt.trim()) {
-        showToast('No prompt available for this case');
-        return;
-      }
+      if (!prompt || !prompt.trim()) return;
 
       navigator.clipboard.writeText(prompt).then(() => {
-        const category = el.getAttribute('data-track-category');
-
-        const buildLink = document.createElement('a');
-        buildLink.href = appendUtmParams('https://whacka.app/dashboard', promptId || '');
-        buildLink.target = '_blank';
-        buildLink.className = 'btn btn-primary build-now';
-        buildLink.textContent = 'Build now';
-        buildLink.setAttribute('data-track', 'cta_build_now');
-        buildLink.setAttribute('data-track-prompt-id', promptId || '');
-        buildLink.setAttribute('data-track-category', category || '');
-
-        el.replaceWith(buildLink);
-        setTimeout(() => buildLink.replaceWith(el), 5000);
+        transitionToBuild(btn);
       }).catch(() => {
-        showToast('Copy failed — please copy manually');
+        // Leave the button as-is on failure so the user can retry
       });
     }
 
@@ -1576,8 +1880,10 @@
       const filtered = filter === 'all' ? cases : cases.filter(c => c.industry === filter);
 
       filtered.forEach((c, i) => {
+        const caseSlug = c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
         const card = document.createElement('article');
         card.className = 'case-card';
+        card.id = 'case-' + caseSlug;
         card.style.animationDelay = `${i * 0.05}s`;
         card.setAttribute('data-prompt-id', c.name);
         card.setAttribute('data-category', c.industry);
@@ -1586,15 +1892,15 @@
         const imageSrc = c.imageUrl || 'assets/brewqueue.png';
         const loadingAttr = i < 2 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" decoding="async"';
         const mediaContent = c.hasImage
-          ? `<img src="${imageSrc}" alt="${c.name} — ${c.industry} app screenshot" ${loadingAttr}>`
+          ? `<img src="${imageSrc}" alt="${c.name} — ${c.industry} app screenshot" width="780" height="1274" ${loadingAttr}>`
           : `<div class="phone-placeholder"><div class="phone-placeholder-icon">${c.icon}</div><div class="phone-placeholder-name">${c.name}</div></div>`;
         const metricHtml = c.metric ? `<div class="case-metric">↗ ${c.metric}</div>` : '';
         const openUrl = appendUtmParams(c.url || 'https://whacka.app/dashboard', c.name);
         const openLabel = c.url ? 'Open app →' : 'Open whacka';
         const hasPrompt = c.prompt && c.prompt.trim();
         const copyButton = hasPrompt
-          ? `<button class="btn btn-primary" data-track="prompt_copy" data-track-prompt-id="${c.name}" data-track-category="${c.industry}" onclick='copyPrompt(this)'>Copy Prompt</button>`
-          : `<button class="btn btn-primary" disabled style="opacity:0.5;cursor:not-allowed;" title="Prompt not available">Copy Prompt</button>`;
+          ? `<button class="btn btn-primary" data-action-state="copy" data-track="prompt_copy" data-track-prompt-id="${c.name}" data-track-category="${c.industry}" onclick='handlePrimaryAction(this)'><span class="btn-icon">${ICONS.copy} Copy Prompt</span></button>`
+          : `<button class="btn btn-primary" disabled style="opacity:0.5;cursor:not-allowed;" title="Prompt not available"><span class="btn-icon">${ICONS.copy} Copy Prompt</span></button>`;
 
         card.innerHTML = `
           <div class="${mediaClass}">
@@ -1605,9 +1911,9 @@
             <h3 class="serif">${c.name}${c.title ? ` · ${c.title}` : ''}</h3>
             <p class="case-problem">${c.solution} ${c.problem}</p>
             ${metricHtml}
-            <div class="case-card-actions">
+            <div class="case-card-actions" aria-live="polite" aria-atomic="true">
               ${copyButton}
-              <a href="${openUrl}" target="_blank" class="btn btn-secondary" data-track="cta_try_it" data-track-prompt-id="${c.name}" data-track-category="${c.industry}">${openLabel}</a>
+              <a href="${openUrl}" target="_blank" class="btn btn-secondary" title="See this setup live" data-track="cta_try_it" data-track-prompt-id="${c.name}" data-track-category="${c.industry}">${openLabel}</a>
             </div>
           </div>
         `;
@@ -1649,18 +1955,52 @@
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Small Business Digital Setups",
-        "itemListElement": cases.map((c, i) => ({
-          "@type": "ListItem",
-          "position": i + 1,
-          "name": c.name,
-          "description": c.solution || c.problem,
-          "url": c.url || undefined
-        })).filter(item => item.url)
+        "itemListElement": cases.map((c, i) => {
+          const slug = c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+          return {
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": c.name,
+            "description": c.solution || c.problem,
+            "url": c.url ? `https://smb-digital-playbook.vercel.app/#case-${slug}` : undefined
+          };
+        }).filter(item => item.url)
       };
       const script = document.createElement('script');
       script.type = 'application/ld+json';
       script.textContent = JSON.stringify(listData);
       document.head.appendChild(script);
+    })();
+
+
+    // Inject dynamic CaseStudy structured data for each case
+    (function injectCaseStudies() {
+      const caseStudyData = cases.filter(c => c.url).map(c => {
+        const slug = c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        return {
+          "@context": "https://schema.org",
+          "@type": "CaseStudy",
+          "name": c.name + (c.title ? " · " + c.title : ""),
+          "description": c.solution || c.problem,
+          "url": `https://smb-digital-playbook.vercel.app/#case-${slug}`,
+          "about": {
+            "@type": "Thing",
+            "name": c.industry
+          },
+          "citation": c.url,
+          "image": c.imageUrl ? `https://smb-digital-playbook.vercel.app/${c.imageUrl}` : undefined,
+          "publisher": {
+            "@type": "Organization",
+            "name": "Small Business Playbook"
+          }
+        };
+      });
+      caseStudyData.forEach(data => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
+      });
     })();
 
     // Draggable phone stack
@@ -1678,18 +2018,21 @@
       function layout(visualIndex) {
         const isTop = visualIndex === phones.length - 1;
         const middle = (phones.length - 1) / 2;
-        const rotation = (visualIndex - middle) * 6;
+        const isHovered = stack.matches(':hover');
+        const spread = isHovered ? 2 : 1;
+        const rotation = (visualIndex - middle) * 5 * spread;
         const scale = isTop ? 1 : 0.95;
-        return { rotation, scale };
+        const translateX = (visualIndex - middle) * (isHovered ? 25 : 5);
+        return { rotation, scale, translateX };
       }
 
       function updateStack(animate = true) {
         phones.forEach((phone, i) => {
           const visualIndex = order.indexOf(i);
           phone.style.zIndex = visualIndex + 1;
-          const { rotation, scale } = layout(visualIndex);
+          const { rotation, scale, translateX } = layout(visualIndex);
           phone.style.transition = animate ? 'transform 0.4s ease-out, opacity 0.4s ease-out' : 'none';
-          phone.style.transform = `translateX(0px) rotate(${rotation}deg) scale(${scale})`;
+          phone.style.transform = `translateX(${translateX}px) rotate(${rotation}deg) scale(${scale})`;
           phone.style.opacity = '1';
         });
       }
@@ -1782,6 +2125,9 @@
       const prevBtn = document.getElementById('phonePrev');
       if (nextBtn) nextBtn.addEventListener('click', () => animateTopCard('next'));
       if (prevBtn) prevBtn.addEventListener('click', () => animateTopCard('prev'));
+
+      stack.addEventListener('mouseenter', () => updateStack());
+      stack.addEventListener('mouseleave', () => updateStack());
 
       updateStack();
     })();
