@@ -717,6 +717,20 @@
       margin-bottom: var(--space-md);
     }
 
+    .featured-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-top: var(--space-lg);
+    }
+
+    .featured-actions .case-metric {
+      margin-bottom: 0;
+      padding: 10px 18px;
+      font-size: 1rem;
+    }
+
     .featured-story {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -749,13 +763,17 @@
     .featured-visual {
       display: flex;
       justify-content: center;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      background: var(--bg);
     }
 
     .featured-visual img {
       max-height: 560px;
-      border-radius: 32px;
-      box-shadow: var(--shadow-hover);
-      border: 8px solid var(--text);
+      width: auto;
+      max-width: 100%;
+      display: block;
     }
 
     /* How it works */
@@ -1105,8 +1123,10 @@
             <p>15-minute pickup slots. Orders ready when the customer arrives. Kitchen preps to a queue.</p>
           </div>
         </div>
-        <div class="case-metric" style="margin-bottom: var(--space-md);">✓ Wait time down 60%</div>
-        <a href="https://sipslot-f1k4.whacka.app/?utm_source=smb_digital_playbook&utm_medium=referral&utm_campaign=smb_cases&utm_content=BrewQueue" target="_blank" class="btn btn-primary" data-track="cta_try_it" data-track-prompt-id="BrewQueue" data-track-category="Food & Beverage">Open the app →</a>
+        <div class="featured-actions">
+          <div class="case-metric featured-metric">✓ Wait time down 60%</div>
+          <a href="https://sipslot-f1k4.whacka.app/?utm_source=smb_digital_playbook&utm_medium=referral&utm_campaign=smb_cases&utm_content=BrewQueue" target="_blank" class="btn btn-primary" data-track="cta_try_it" data-track-prompt-id="BrewQueue" data-track-category="Food & Beverage">Open the app →</a>
+        </div>
       </div>
       <div class="featured-visual">
         <img src="assets/brewqueue.png" alt="BrewQueue coffee pre-order app">
