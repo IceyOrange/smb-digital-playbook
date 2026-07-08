@@ -1228,25 +1228,35 @@
       person_profiles: "identified_only",
       capture_pageview: true,
       capture_pageleave: true,
-      session_recording: {
-        maskAllInputs: false,
-        maskTextSelector: ""
-      }
+      disable_session_recording: true
     });
+  </script>
+
+  <!-- Safe analytics wrapper: never let tracking errors break the site -->
+  <script>
+    window.safeCapture = function(event, props) {
+      if (window.posthog && typeof window.posthog.capture === 'function') {
+        try {
+          window.posthog.capture(event, props);
+        } catch (e) {
+          // Ignore analytics failures so the UI keeps working
+        }
+      }
+    };
   </script>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="#" class="logo" data-track="nav_click" data-track-destination="home">
-        <span class="logo-mark"><img src="assets/smb.svg" alt=""></span>
+      <a href="#" class="logo" data-track="nav_click" data-track-destination="home" data-track-location="nav">
+        <span class="logo-mark"><img src="assets/smb.svg" alt="" aria-hidden="true"></span>
         <span>Small Business Playbook</span>
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="#cases" data-track="nav_click" data-track-destination="cases">Case Studies</a></li>
-          <li><a href="#how" data-track="nav_click" data-track-destination="how_it_works">How It Works</a></li>
-          <li><a href="#cta" data-track="nav_click" data-track-destination="cta">Get Started</a></li>
+          <li><a href="#cases" data-track="nav_click" data-track-destination="cases" data-track-location="nav">Case Studies</a></li>
+          <li><a href="#how" data-track="nav_click" data-track-destination="how_it_works" data-track-location="nav">How It Works</a></li>
+          <li><a href="#cta" data-track="nav_click" data-track-destination="cta" data-track-location="nav">Get Started</a></li>
         </ul>
       </nav>
     </div>
@@ -1259,8 +1269,8 @@
         <h1 class="serif">The Small Business<br><em>Digital Playbook</em></h1>
         <p class="hero-sub">No code. No buzzwords. Just 25 battle-tested digital setups pulled from real shop floors.</p>
         <div class="hero-actions">
-          <a href="#cases" class="btn btn-primary" data-track="cta_click" data-track-action="hero_primary" data-track-destination="cases">See how others did it →</a>
-          <a href="#how" class="btn btn-secondary" data-track="cta_click" data-track-action="hero_secondary" data-track-destination="how_it_works">How does this work?</a>
+          <a href="#cases" class="btn btn-primary" data-track="cta_click" data-track-action="hero_primary" data-track-destination="cases" data-track-location="hero">See how others did it →</a>
+          <a href="#how" class="btn btn-secondary" data-track="cta_click" data-track-action="hero_secondary" data-track-destination="how_it_works" data-track-location="hero">How does this work?</a>
         </div>
         <div class="hero-stats">
           <div class="stat-pill"><strong>25</strong> micro-setups</div>
@@ -1326,17 +1336,17 @@
     </div>
 
     <div class="filters">
-      <button class="filter-btn active" data-filter="all" data-track="category_filter" data-track-category="all">All</button>
-      <button class="filter-btn" data-filter="Food & Beverage" data-track="category_filter" data-track-category="Food & Beverage">Food & Beverage</button>
-      <button class="filter-btn" data-filter="Retail" data-track="category_filter" data-track-category="Retail">Retail</button>
-      <button class="filter-btn" data-filter="Fitness" data-track="category_filter" data-track-category="Fitness">Fitness</button>
-      <button class="filter-btn" data-filter="Beauty" data-track="category_filter" data-track-category="Beauty">Beauty</button>
-      <button class="filter-btn" data-filter="Education" data-track="category_filter" data-track-category="Education">Edu</button>
-      <button class="filter-btn" data-filter="Healthcare" data-track="category_filter" data-track-category="Healthcare">Health</button>
-      <button class="filter-btn" data-filter="Services" data-track="category_filter" data-track-category="Services">Services</button>
-      <button class="filter-btn" data-filter="Pet Care" data-track="category_filter" data-track-category="Pet Care">Pet</button>
-      <button class="filter-btn" data-filter="Home Services" data-track="category_filter" data-track-category="Home Services">Home</button>
-      <button class="filter-btn" data-filter="Creative" data-track="category_filter" data-track-category="Creative">Creative</button>
+      <button class="filter-btn active" data-filter="all" data-track="category_filter" data-track-category="all" data-track-location="filters">All</button>
+      <button class="filter-btn" data-filter="Food & Beverage" data-track="category_filter" data-track-category="Food & Beverage" data-track-location="filters">Food & Beverage</button>
+      <button class="filter-btn" data-filter="Retail" data-track="category_filter" data-track-category="Retail" data-track-location="filters">Retail</button>
+      <button class="filter-btn" data-filter="Fitness" data-track="category_filter" data-track-category="Fitness" data-track-location="filters">Fitness</button>
+      <button class="filter-btn" data-filter="Beauty" data-track="category_filter" data-track-category="Beauty" data-track-location="filters">Beauty</button>
+      <button class="filter-btn" data-filter="Education" data-track="category_filter" data-track-category="Education" data-track-location="filters">Edu</button>
+      <button class="filter-btn" data-filter="Healthcare" data-track="category_filter" data-track-category="Healthcare" data-track-location="filters">Health</button>
+      <button class="filter-btn" data-filter="Services" data-track="category_filter" data-track-category="Services" data-track-location="filters">Services</button>
+      <button class="filter-btn" data-filter="Pet Care" data-track="category_filter" data-track-category="Pet Care" data-track-location="filters">Pet</button>
+      <button class="filter-btn" data-filter="Home Services" data-track="category_filter" data-track-category="Home Services" data-track-location="filters">Home</button>
+      <button class="filter-btn" data-filter="Creative" data-track="category_filter" data-track-category="Creative" data-track-location="filters">Creative</button>
     </div>
 
     <div class="case-grid" id="caseGrid"></div>
@@ -1360,7 +1370,7 @@
         </div>
         <div class="featured-actions">
           <div class="case-metric featured-metric">✓ Wait time down 60%</div>
-          <a href="https://sipslot-f1k4.whacka.app/?utm_source=smb_digital_playbook&utm_medium=referral&utm_campaign=smb_cases&utm_content=BrewQueue" target="_blank" class="btn btn-primary" data-track="cta_try_it" data-track-prompt-id="BrewQueue" data-track-category="Food & Beverage">Open the app →</a>
+          <a href="https://sipslot-f1k4.whacka.app/?utm_source=smb_digital_playbook&utm_medium=referral&utm_campaign=smb_cases&utm_content=BrewQueue" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-track="cta_try_it" data-track-prompt-id="BrewQueue" data-track-category="Food & Beverage" data-track-location="featured">Open the app →</a>
         </div>
       </div>
       <div class="featured-visual">
@@ -1426,7 +1436,7 @@
   <section class="cta" id="cta">
     <h2 class="serif">Your shop deserves a setup that actually fits</h2>
     <p>Coffee shop, nail studio, gym, convenience store — it doesn't matter. Pick one case and try it. The cost of experimenting is basically zero.</p>
-    <a href="#cases" class="btn btn-primary" data-track="cta_click" data-track-action="bottom_browse" data-track-destination="cases">Browse the cases →</a>
+    <a href="#cases" class="btn btn-primary" data-track="cta_click" data-track-action="bottom_browse" data-track-destination="cases" data-track-location="bottom">Browse the cases →</a>
   </section>
 
   <footer class="site-footer">
@@ -1801,12 +1811,21 @@
     const filterBtns = document.querySelectorAll('.filter-btn');
     const toast = document.getElementById('toast');
 
+    function isWhackaUrl(url) {
+      if (!url) return false;
+      try {
+        const u = new URL(url, location.href);
+        return u.hostname === 'whacka.app' || u.hostname.endsWith('.whacka.app');
+      } catch (e) {
+        return false;
+      }
+    }
+
     function appendUtmParams(url, content) {
       if (!url) return url;
       try {
         const u = new URL(url, location.href);
-        const isWhacka = u.hostname === 'whacka.app' || u.hostname.endsWith('.whacka.app');
-        if (!isWhacka) return url;
+        if (!isWhackaUrl(url)) return url;
         if (!u.searchParams.has('utm_source')) u.searchParams.set('utm_source', 'smb_digital_playbook');
         if (!u.searchParams.has('utm_medium')) u.searchParams.set('utm_medium', 'referral');
         if (!u.searchParams.has('utm_campaign')) u.searchParams.set('utm_campaign', 'smb_cases');
@@ -1832,6 +1851,7 @@
       btn.classList.remove('is-build');
       btn.setAttribute('data-action-state', 'copy');
       btn.setAttribute('data-track', 'prompt_copy');
+      btn.setAttribute('data-track-location', 'card');
       btn.removeAttribute('aria-label');
       btn.disabled = false;
       btn.innerHTML = `<span class="btn-icon">${ICONS.copy} Copy Prompt</span>`;
@@ -1841,18 +1861,32 @@
       btn.classList.add('is-build');
       btn.setAttribute('data-action-state', 'build');
       btn.setAttribute('data-track', 'cta_build_now');
+      btn.setAttribute('data-track-location', 'card');
       btn.setAttribute('aria-label', 'Build your app on whacka (opens in new tab)');
       btn.disabled = false;
       btn.innerHTML = `<span class="btn-icon">${ICONS.external} Build now</span>`;
     }
 
-    function handlePrimaryAction(btn) {
+    function handlePrimaryAction(btn, event) {
       const state = btn.getAttribute('data-action-state') || 'copy';
       if (state === 'build') {
         const promptId = btn.getAttribute('data-track-prompt-id');
+        const category = btn.getAttribute('data-track-category');
         const url = appendUtmParams('https://whacka.app/dashboard', promptId || '');
+        safeCapture('cta_build_now', {
+          prompt_id: promptId,
+          category: category,
+          location: 'card'
+        });
+        safeCapture('whacka_outbound_click', {
+          type: 'build_now',
+          prompt_id: promptId,
+          category: category,
+          href: url
+        });
         window.open(url, '_blank', 'noopener,noreferrer');
         resetPrimaryButton(btn);
+        if (event) event.stopPropagation();
       } else {
         copyPrompt(btn);
       }
@@ -1866,6 +1900,12 @@
       if (!prompt || !prompt.trim()) return;
 
       navigator.clipboard.writeText(prompt).then(() => {
+        safeCapture('prompt_copied', {
+          prompt_id: promptId,
+          category: caseData ? caseData.industry : undefined,
+          location: 'card'
+        });
+        showToast('Prompt copied');
         transitionToBuild(btn);
       }).catch(() => {
         // Leave the button as-is on failure so the user can retry
@@ -1899,7 +1939,7 @@
         const openLabel = c.url ? 'Open app →' : 'Open whacka';
         const hasPrompt = c.prompt && c.prompt.trim();
         const copyButton = hasPrompt
-          ? `<button class="btn btn-primary" data-action-state="copy" data-track="prompt_copy" data-track-prompt-id="${c.name}" data-track-category="${c.industry}" onclick='handlePrimaryAction(this)'><span class="btn-icon">${ICONS.copy} Copy Prompt</span></button>`
+          ? `<button class="btn btn-primary" data-action-state="copy" data-track="prompt_copy" data-track-prompt-id="${c.name}" data-track-category="${c.industry}" data-track-location="card" onclick='handlePrimaryAction(this, event)'><span class="btn-icon">${ICONS.copy} Copy Prompt</span></button>`
           : `<button class="btn btn-primary" disabled style="opacity:0.5;cursor:not-allowed;" title="Prompt not available"><span class="btn-icon">${ICONS.copy} Copy Prompt</span></button>`;
 
         card.innerHTML = `
@@ -1913,7 +1953,7 @@
             ${metricHtml}
             <div class="case-card-actions" aria-live="polite" aria-atomic="true">
               ${copyButton}
-              <a href="${openUrl}" target="_blank" class="btn btn-secondary" title="See this setup live" data-track="cta_try_it" data-track-prompt-id="${c.name}" data-track-category="${c.industry}">${openLabel}</a>
+              <a href="${openUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="See this setup live" data-track="cta_try_it" data-track-prompt-id="${c.name}" data-track-category="${c.industry}" data-track-location="card">${openLabel}</a>
             </div>
           </div>
         `;
@@ -1930,7 +1970,7 @@
               const cat = entry.target.getAttribute('data-category');
               if (id && !viewedCases.has(id)) {
                 viewedCases.add(id);
-                posthog.capture('prompt_view', { prompt_id: id, category: cat });
+                safeCapture('prompt_view', { prompt_id: id, category: cat });
               }
             }
           });
@@ -2145,14 +2185,14 @@
         [25, 50, 75, 90, 100].forEach(function(m) {
           if (pct >= m && !scrollMilestones.has(m)) {
             scrollMilestones.add(m);
-            posthog.capture('scroll_depth', { percent: m });
+            safeCapture('scroll_depth', { percent: m });
           }
         });
       }, { passive: true });
 
       // Time on page
       [30, 60, 120, 300, 600].forEach(function(sec) {
-        setTimeout(function() { posthog.capture('time_on_page', { seconds: sec }); }, sec * 1000);
+        setTimeout(function() { safeCapture('time_on_page', { seconds: sec }); }, sec * 1000);
       });
 
       // Section views
@@ -2162,11 +2202,15 @@
           entries.forEach(function(entry) {
             if (entry.isIntersecting && entry.target.id && !viewedSections.has(entry.target.id)) {
               viewedSections.add(entry.target.id);
-              posthog.capture('section_view', { section: entry.target.id, threshold: Math.round(entry.intersectionRatio * 100) });
+              safeCapture('section_view', { section: entry.target.id, threshold: Math.round(entry.intersectionRatio * 100) });
             }
           });
         }, { threshold: [0.25, 0.5, 0.75] });
         document.querySelectorAll('section[id], header[id]').forEach(function(el) { sectionObserver.observe(el); });
+      }
+
+      function camelToSnake(str) {
+        return str.replace(/[A-Z]/g, function(letter) { return '_' + letter.toLowerCase(); });
       }
 
       // Delegated click tracking for elements with data-track
@@ -2177,24 +2221,41 @@
         const data = {};
         Object.keys(el.dataset).forEach(function(key) {
           if (key === 'track') return;
-          if (key.indexOf('track') === 0) {
-            const dataKey = key.replace(/^track/, '').replace(/^[A-Z]/, function(c) { return c.toLowerCase(); });
+          // Match data-track-* attributes only (dataset key becomes 'trackXxx')
+          if (key.indexOf('track') === 0 && key.length > 5 && /[A-Z]/.test(key.charAt(5))) {
+            const dataKey = camelToSnake(key.replace(/^track/, '').replace(/^[A-Z]/, function(c) { return c.toLowerCase(); }));
             data[dataKey] = el.dataset[key];
           }
         });
         // Capture href for outbound link analysis
         if (el.href) {
           data.href = el.href;
-          data.isExternal = el.hostname !== location.hostname;
+          data.is_external = el.hostname !== location.hostname;
         }
-        posthog.capture(type, data);
+        safeCapture(type, data);
+      });
+
+      // Unified conversion event: any click that lands on whacka.app
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href^="http"]');
+        if (!link) return;
+        const hostname = link.hostname || '';
+        const isWhacka = hostname === 'whacka.app' || hostname.endsWith('.whacka.app');
+        if (!isWhacka) return;
+        safeCapture('whacka_outbound_click', {
+          href: link.href,
+          text: (link.textContent || '').trim().slice(0, 40),
+          type: link.dataset.track === 'cta_try_it' ? 'try_it' : 'generic',
+          prompt_id: link.dataset.trackPromptId || undefined,
+          category: link.dataset.trackCategory || undefined
+        });
       });
 
       // Track outbound link clicks that don't have explicit data-track
       document.addEventListener('click', function(e) {
         const link = e.target.closest('a[href^="http"]:not([data-track])');
         if (!link) return;
-        posthog.capture('outbound_click', { href: link.href, text: (link.textContent || '').trim().slice(0, 40) });
+        safeCapture('outbound_click', { href: link.href, text: (link.textContent || '').trim().slice(0, 40) });
       });
     })();
   </script>

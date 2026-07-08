@@ -78,6 +78,7 @@ This site uses [PostHog](https://posthog.com) for product analytics.
 - `cta_click` / `cta_try_it` / `cta_build_now` / `nav_click` / `category_filter` / `prompt_copy` — from `data-track` attributes
 - `prompt_view` — when a case card enters the viewport
 - `outbound_click` — clicks on external links without explicit `data-track`
+- `whacka_outbound_click` — unified conversion event for any click that lands on `whacka.app` or `*.whacka.app`, including `cta_try_it` and `cta_build_now`
 
 ### UTM attribution
 
